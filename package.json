@@ -6,7 +6,7 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "build": "next build",
-    "postbuild": "prisma migrate deploy && node prisma/seed.js",
+    "postbuild": "prisma migrate deploy && ts-node prisma/seed.ts",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node prisma/seed.ts",
