@@ -3,31 +3,66 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Estilos comuns */
+.homeButton {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  border-radius: 26px;
+  border: 2px solid;
+  display: inline-block;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ded17c;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Estilos para o botão amarelo */
+.homeButton-yellow {
+  background: linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+  background-color: #f0c911;
+  border-color: #e65f44;
+  color: #c92200;
+}
+
+.homeButton-yellow:hover {
+  background: linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+  background-color: #f2ab1e;
+}
+
+.homeButton-yellow:active {
+  top: 1px;
+  position: relative;
+}
+
+/* Estilos para o botão verde */
+.homeButton-green {
+  background: linear-gradient(to bottom, #34d399 5%, #059669 100%);
+  background-color: #34d399;
+  border-color: #065f46;
+  color: #064e3b;
+}
+
+.homeButton-green:hover {
+  background: linear-gradient(to bottom, #059669 5%, #34d399 100%);
+  background-color: #059669;
+}
+
+.homeButton-green:active {
+  top: 1px;
+  position: relative;
 }

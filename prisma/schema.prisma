@@ -1,0 +1,65 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./quiz.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Level {
+  id        Int       @id @default(autoincrement())
+  name      String
+  questions Question[]
+}
+
+model Module {
+  id        Int       @id @default(autoincrement())
+  name      String
+  lessons   Lesson[]
+  questions Question[]
+}
+
+model Lesson {
+  id        Int       @id @default(autoincrement())
+  name      String
+  moduleId  Int
+  module    Module    @relation(fields: [moduleId], references: [id])
+  questions Question[]
+}
+
+model Question {
+  id        Int       @id @default(autoincrement())
+  question  String
+  type      String
+  tips      String?
+  imageUrl  String?
+  levelId   Int
+  moduleId  Int
+  lessonId  Int
+  level     Level     @relation(fields: [levelId], references: [id])
+  module    Module    @relation(fields: [moduleId], references: [id])
+  lesson    Lesson    @relation(fields: [lessonId], references: [id])
+  answers   Answer[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Answer {
+  id          Int      @id @default(autoincrement())
+  text        String
+  isCorrect   Boolean
+  explanation String?
+  questionId  Int
+  question    Question @relation(fields: [questionId], references: [id])
+}
+
+model Ranking {
+  id          Int      @id @default(autoincrement())
+  playerName  String
+  totalScore  Int
+  totalTime   Int
+  mode        String
+  createdAt   DateTime @default(now())
+}
+

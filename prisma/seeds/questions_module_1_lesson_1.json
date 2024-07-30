@@ -1,0 +1,142 @@
+[
+  {
+    "question": "O que é a Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense no livro mais importante para os cristãos.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Um livro de histórias", "isCorrect": false, "explanation": "Embora contenha histórias, a Bíblia é mais do que isso." },
+      { "text": "Um manual de vida", "isCorrect": true, "explanation": "" },
+      { "text": "Um dicionário", "isCorrect": false, "explanation": "A Bíblia não é um dicionário." },
+      { "text": "Um romance", "isCorrect": false, "explanation": "A Bíblia não é um romance." }
+    ]
+  },
+  {
+    "question": "Quantos livros tem a Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense em um número maior que 60 e menor que 70.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "39", "isCorrect": false, "explanation": "Esse é o número de livros no Antigo Testamento." },
+      { "text": "27", "isCorrect": false, "explanation": "Esse é o número de livros no Novo Testamento." },
+      { "text": "66", "isCorrect": true, "explanation": "" },
+      { "text": "73", "isCorrect": false, "explanation": "Esse é o número de livros na Bíblia Católica." }
+    ]
+  },
+  {
+    "question": "Quem escreveu a Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense em mais de uma pessoa.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Uma pessoa", "isCorrect": false, "explanation": "A Bíblia foi escrita por várias pessoas." },
+      { "text": "Várias pessoas", "isCorrect": true, "explanation": "" },
+      { "text": "Um anjo", "isCorrect": false, "explanation": "Os anjos não escreveram a Bíblia." },
+      { "text": "Ninguém sabe", "isCorrect": false, "explanation": "Nós sabemos que várias pessoas inspiradas por Deus escreveram a Bíblia." }
+    ]
+  },
+  {
+    "question": "Em que idioma foi escrita a maior parte do Antigo Testamento?",
+    "type": "multipla_escolha",
+    "tips": "Pense em uma língua antiga falada no Oriente Médio.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Grego", "isCorrect": false, "explanation": "O Novo Testamento foi escrito principalmente em grego." },
+      { "text": "Hebraico", "isCorrect": true, "explanation": "" },
+      { "text": "Latim", "isCorrect": false, "explanation": "O Latim foi usado na Igreja Católica, mas não na escrita original da Bíblia." },
+      { "text": "Aramaico", "isCorrect": false, "explanation": "Embora partes do Antigo Testamento estejam em aramaico, a maior parte está em hebraico." }
+    ]
+  },
+  {
+    "question": "Quantos Testamentos tem a Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense em uma divisão básica.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Um", "isCorrect": false, "explanation": "A Bíblia está dividida em dois Testamentos." },
+      { "text": "Dois", "isCorrect": true, "explanation": "" },
+      { "text": "Três", "isCorrect": false, "explanation": "A Bíblia tem apenas dois Testamentos." },
+      { "text": "Quatro", "isCorrect": false, "explanation": "A Bíblia tem apenas dois Testamentos." }
+    ]
+  },
+  {
+    "question": "Qual é o primeiro livro da Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense no começo.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Êxodo", "isCorrect": false, "explanation": "Êxodo é o segundo livro da Bíblia." },
+      { "text": "Levítico", "isCorrect": false, "explanation": "Levítico é o terceiro livro da Bíblia." },
+      { "text": "Gênesis", "isCorrect": true, "explanation": "" },
+      { "text": "Deuteronômio", "isCorrect": false, "explanation": "Deuteronômio é o quinto livro da Bíblia." }
+    ]
+  },
+  {
+    "question": "Quantos livros há no Antigo Testamento?",
+    "type": "multipla_escolha",
+    "tips": "Pense em um número menor que 40.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "27", "isCorrect": false, "explanation": "Esse é o número de livros no Novo Testamento." },
+      { "text": "39", "isCorrect": true, "explanation": "" },
+      { "text": "66", "isCorrect": false, "explanation": "Esse é o número total de livros na Bíblia." },
+      { "text": "73", "isCorrect": false, "explanation": "Esse é o número de livros na Bíblia Católica." }
+    ]
+  },
+  {
+    "question": "Qual é o maior livro da Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense em um livro com muitos capítulos.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Gênesis", "isCorrect": false, "explanation": "Gênesis é grande, mas não é o maior." },
+      { "text": "Salmos", "isCorrect": true, "explanation": "" },
+      { "text": "Isaías", "isCorrect": false, "explanation": "Isaías é grande, mas não é o maior." },
+      { "text": "Jeremias", "isCorrect": false, "explanation": "Jeremias é grande, mas não é o maior." }
+    ]
+  },
+  {
+    "question": "Qual é o menor livro da Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense em um livro com apenas um capítulo.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Filemom", "isCorrect": false, "explanation": "Filemom é pequeno, mas não é o menor." },
+      { "text": "3 João", "isCorrect": true, "explanation": "" },
+      { "text": "Judas", "isCorrect": false, "explanation": "Judas é pequeno, mas não é o menor." },
+      { "text": "2 João", "isCorrect": false, "explanation": "2 João é pequeno, mas não é o menor." }
+    ]
+  },
+  {
+    "question": "Qual é o último livro da Bíblia?",
+    "type": "multipla_escolha",
+    "tips": "Pense no fim.",
+    "levelId": 4,
+    "moduleId": 1,
+    "lessonId": 1,
+    "answers": [
+      { "text": "Apocalipse", "isCorrect": true, "explanation": "" },
+      { "text": "João", "isCorrect": false, "explanation": "João é um dos evangelhos, mas não é o último livro." },
+      { "text": "Atos", "isCorrect": false, "explanation": "Atos está no Novo Testamento, mas não é o último livro." },
+      { "text": "Romanos", "isCorrect": false, "explanation": "Romanos é uma das cartas de Paulo, mas não é o último livro." }
+    ]
+  }
+]
