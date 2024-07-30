@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:seed": "node prisma/seed.js",
+    "build": "next build && npm run prisma:migrate && npm run prisma:seed",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node prisma/seed.ts",
     "reset-db": "npx prisma migrate reset --force && npm run seed"
+    
   },
   "dependencies": {
     "@prisma/client": "^5.17.0",
