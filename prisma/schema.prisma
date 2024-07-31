@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -57,6 +57,7 @@ model Answer {
 model Ranking {
   id          Int      @id @default(autoincrement())
   playerName  String
+  genre  String?
   totalScore  Int
   totalTime   Int
   mode        String

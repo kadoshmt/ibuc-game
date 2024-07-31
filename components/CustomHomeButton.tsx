@@ -1,4 +1,7 @@
 import React from 'react';
+import { Rammetto_One } from 'next/font/google';
+
+const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 
 interface CustomHomeButtonProps {
   color: 'yellow' | 'green';
@@ -7,7 +10,7 @@ interface CustomHomeButtonProps {
 }
 
 const CustomHomeButton: React.FC<CustomHomeButtonProps> = ({ color, text, onClick }) => {
-  const baseClass = `homeButton homeButton-${color}`;
+  const baseClass = `${rammetto.className} homeButton homeButton-${color}`;
 
   return (
     <button

@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/prisma/prisma-client';
 
 export async function POST(req: Request) {
   const { playerName, totalScore, totalTime, mode } = await req.json();

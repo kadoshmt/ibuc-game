@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/prisma/prisma-client';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -9,21 +7,32 @@ export async function GET(req: NextRequest) {
   const moduleId = parseInt(searchParams.get('moduleId') || '0', 10);
   const lessonId = parseInt(searchParams.get('lessonId') || '0', 10);
 
+  console.log('chamou QUESTIONS route')
+
   if (!levelId || !moduleId || !lessonId) {
     return NextResponse.json({ error: 'Invalid query parameters' }, { status: 400 });
   }
 
-  const questions = await prisma.question.findMany({
-    where: {
-      levelId,
-      moduleId,
-      lessonId,
-    },
-    include: {
-      answers: true,
-    },
-    take: 10,
-  });
+  try {
+    const questions = await prisma.question.findMany({
+      where: {
+        levelId,
+        moduleId,
+        lessonId,
+      },
+      include: {
+        answers: true,
+      },
+      take: 10,
+    });
 
-  return NextResponse.json(questions);
+    if (questions.length === 0) {
+      return NextResponse.json({ error: 'No questions found' }, { status: 404 });
+    }
+
+    return NextResponse.json(questions);
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }
