@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Rammetto_One } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" }); // Configurando a fonte Rammetto One
 
 export const metadata: Metadata = {
   title: "IBUC QUIZ",

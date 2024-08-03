@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { Question } from '@/types';
 import { shuffle } from '@/utils/shuffle';
+import { Question } from '@/types';
 
 export default function Quiz() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -68,7 +68,7 @@ export default function Quiz() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ score, time: totalTime }),
       });
-      router.push(`/quiz/complete/${sessionId}`);
+      router.push(`/classMode/quiz/complete/${sessionId}`);
     } else {
       setSelectedAnswer(null);
       setShowFeedback(false);

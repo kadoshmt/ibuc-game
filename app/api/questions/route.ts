@@ -7,8 +7,6 @@ export async function GET(req: NextRequest) {
   const moduleId = parseInt(searchParams.get('moduleId') || '0', 10);
   const lessonId = parseInt(searchParams.get('lessonId') || '0', 10);
 
-  console.log('chamou QUESTIONS route')
-
   if (!levelId || !moduleId || !lessonId) {
     return NextResponse.json({ error: 'Invalid query parameters' }, { status: 400 });
   }
