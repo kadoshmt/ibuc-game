@@ -1,22 +1,41 @@
-import NodeCache from 'node-cache';
+import { PrismaClient } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid';
 
-const cache = new NodeCache({ stdTTL: 300 }); // 5 minutos de TTL
+const prisma = new PrismaClient();
 
-export const createSession = (data: object) => {
+export const createSession = async (data: { levelId: number, moduleId: number, lessonId: number, score: number, time: number }) => {
   const sessionId = uuidv4();
-  cache.set(sessionId, data);
+  await prisma.session.create({
+    data: {
+      id: sessionId,
+      levelId: data.levelId,
+      moduleId: data.moduleId,
+      lessonId: data.lessonId,
+      score: data.score,
+      time: data.time,
+    },
+  });
   return sessionId;
 };
 
-export const getSession = (sessionId: string) => {
-  return cache.get(sessionId);
+export const getSession = async (sessionId: string) => {
+  return await prisma.session.findUnique({
+    where: { id: sessionId },
+  });
 };
 
-export const updateSession = (sessionId: string, data: object) => {
-  cache.set(sessionId, data);
+export const updateSession = async (sessionId: string, data: { score: number, time: number }) => {
+  await prisma.session.update({
+    where: { id: sessionId },
+    data: {
+      score: data.score,
+      time: data.time,
+    },
+  });
 };
 
-export const deleteSession = (sessionId: string) => {
-  cache.del(sessionId);
+export const deleteSession = async (sessionId: string) => {
+  await prisma.session.delete({
+    where: { id: sessionId },
+  });
 };

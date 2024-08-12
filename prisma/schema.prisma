@@ -64,3 +64,15 @@ model Ranking {
   createdAt   DateTime @default(now())
 }
 
+model Session {
+  id        String   @id @default(uuid())
+  levelId   Int
+  moduleId  Int
+  lessonId  Int
+  score     Int
+  time      Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+

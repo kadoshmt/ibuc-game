@@ -4,6 +4,14 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { shuffle } from '@/utils/shuffle';
 import { Question } from '@/types';
+import { Patrick_Hand, Rammetto_One } from 'next/font/google';
+import Image from 'next/image';
+import { playCorrectSound, playIncorrectSound } from '@/utils/soundEffects';
+import FullScreenLoader from '@/components/FullScreenLoader';
+import useAudio from '@/hooks/useAudio';
+
+const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
+const patrick = Patrick_Hand({ subsets: ["latin"], weight: "400" });
 
 export default function Quiz() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -14,41 +22,46 @@ export default function Quiz() {
   const [loading, setLoading] = useState(true);
   const [explanation, setExplanation] = useState('');
   const [startTime, setStartTime] = useState<number>(0);
+  const [elapsedTime, setElapsedTime] = useState<number>(0);
+  const [flashIndex, setFlashIndex] = useState<number | null>(null);
+  const [playerName, setPlayerName] = useState<string>('');
+  const [playerGender, setPlayerGender] = useState<string>('');
   const router = useRouter();
   const { sessionId } = useParams();
+
+  const { isPlaying, toggle } = useAudio('/bg-quiz-classmode.mp3');
+
+  const answerLabels = ['A', 'B', 'C', 'D'];
 
   useEffect(() => {
     const fetchSession = async () => {
       if (sessionId) {
-        const response = await fetch(`/api/session?id=${sessionId}`);
-        if (response.ok) {
-          const session = await response.json();
-          const { levelId, moduleId, lessonId } = session;
-          if (levelId && moduleId && lessonId) {
-            fetch(`/api/questions?levelId=${levelId}&moduleId=${moduleId}&lessonId=${lessonId}`)
-              .then((res) => {
-                if (!res.ok) {
-                  throw new Error('Network response was not ok');
-                }
-                return res.json();
-              })
-              .then((data: Question[]) => {
-                const shuffledQuestions = shuffle(data).map((question: Question) => ({
-                  ...question,
-                  answers: shuffle(question.answers),
-                }));
-                setQuestions(shuffledQuestions);
-                setLoading(false);
-                setStartTime(Date.now()); // Set start time when questions are loaded
-              })
-              .catch((error) => {
-                console.error('Error fetching questions:', error);
-                setLoading(false);
-              });
+        try {
+          const response = await fetch(`/api/session?id=${sessionId}`);
+          if (response.ok) {
+            const session = await response.json();
+            const { levelId, moduleId, lessonId } = session;
+            if (levelId && moduleId && lessonId) {
+              const res = await fetch(`/api/questions?levelId=${levelId}&moduleId=${moduleId}&lessonId=${lessonId}`);
+              if (!res.ok) {
+                throw new Error('Network response was not ok');
+              }
+              const data: Question[] = await res.json();
+              const shuffledQuestions = shuffle(data).map((question: Question) => ({
+                ...question,
+                answers: shuffle(question.answers),
+              }));
+              setQuestions(shuffledQuestions);
+              setLoading(false); // Desativa o carregamento quando os dados estiverem prontos
+              setStartTime(Date.now()); // Define o tempo de início quando as perguntas são carregadas
+            } else {
+              router.push('/');
+            }
           } else {
             router.push('/');
           }
-        } else {
+        } catch (error) {
+          console.error('Error fetching session or questions:', error);
           router.push('/');
         }
       } else {
@@ -59,10 +72,43 @@ export default function Quiz() {
     fetchSession();
   }, [sessionId, router]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setElapsedTime(Date.now() - startTime);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [startTime]);
+
+  useEffect(() => {
+    const name = localStorage.getItem('playerName') || '';
+    const gender = localStorage.getItem('playerGender') || 'menino'; // Default to 'menino' if not set
+    setPlayerName(name);
+    setPlayerGender(gender);
+  }, []);
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60000);
+    const seconds = Math.floor((time % 60000) / 1000);
+    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
+  const getAvatarDetails = () => {
+    switch (playerGender) {
+      case 'menino':
+        return { src: '/avatar-boy.png', bgColor: 'bg-blue-500' };
+      case 'menina':
+        return { src: '/avatar-girl.png', bgColor: 'bg-pink-500' };
+      case 'sala-de-aula-time':
+      default:
+        return { src: '/avatar-team.png', bgColor: 'bg-yellow-500' };
+    }
+  };
+
   const handleNextQuestion = async () => {
     if (questionIndex + 1 >= questions.length) {
       const endTime = Date.now();
-      const totalTime = (endTime - startTime) / 1000; // Calculate total time in seconds
+      const totalTime = (endTime - startTime) / 1000; // Calcula o tempo total em segundos
       await fetch(`/api/session?id=${sessionId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -73,24 +119,38 @@ export default function Quiz() {
       setSelectedAnswer(null);
       setShowFeedback(false);
       setExplanation('');
+      setFlashIndex(null);
       setQuestionIndex((prevIndex) => prevIndex + 1);
     }
+  };
+
+  const handleHome = () => {
+    router.push('/');
   };
 
   const handleAnswerSelect = (index: number) => {
     setSelectedAnswer(index);
     const answer = questions[questionIndex].answers[index];
     const correct = answer.isCorrect;
+
     if (correct) {
-      setScore(score + 100); // Each correct answer adds 100 points
+      playCorrectSound();
+      setScore(score + 100); // Cada resposta correta adiciona 100 pontos
+      setFlashIndex(index);
     } else {
+      playIncorrectSound();
       setExplanation(answer.explanation || '');
     }
+
     setShowFeedback(true);
+
+    setTimeout(() => {
+      setFlashIndex(null);
+    }, 2000);
   };
 
   if (loading) {
-    return <div className="flex items-center justify-center h-screen bg-gray-100">Carregando perguntas...</div>;
+    return <FullScreenLoader />;
   }
 
   if (questions.length === 0) {
@@ -98,46 +158,82 @@ export default function Quiz() {
   }
 
   const currentQuestion = questions[questionIndex];
+  const { src: avatarSrc, bgColor: avatarBgColor } = getAvatarDetails();
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="relative w-[800px] h-[600px] bg-white shadow-lg rounded-lg p-8 overflow-hidden">
-        <h1 className="text-3xl font-bold mb-4">Quiz</h1>
-        <div className="mb-4 text-center">
-          <p className="text-xl font-bold mb-6">{currentQuestion.question}</p>
-          <ul>
-            {currentQuestion.answers.map((option, index) => (
-              <li key={index}>
-                <button
-                  onClick={() => handleAnswerSelect(index)}
-                  className={`w-full p-2 border rounded mb-2 ${
-                    selectedAnswer === index
-                      ? option.isCorrect
-                        ? 'bg-green-500 text-white'
-                        : 'bg-red-500 text-white'
-                      : ''
-                  }`}
-                  disabled={showFeedback}
-                >
-                  {option.text}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {showFeedback && !questions[questionIndex].answers[selectedAnswer!].isCorrect && (
-          <div className="text-center text-yellow-900 font-bold bg-yellow-50 border border-yellow-900 rounded p-4 mb-4 mx-auto">
-            <p>{explanation}</p>
+    <div className="flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/quiz-classmode.webp)' }}>
+      <div className="relative w-[1000px] h-[849px] flex flex-col justify-between" style={{ backgroundImage: 'url(/pergaminho.png)', backgroundSize: 'cover' }}>
+        <div className="text-center  w-full flex justify-center px-56 pt-14">
+          <div className={`flex items-center gap-2`}>
+            <div className={`rounded-full shadow-lg ${avatarBgColor} border-8 border-orange-700`}>
+              <Image src={avatarSrc} alt="Avatar" width={88} height={88} className="rounded-full" />
+            </div>
+            <span className={`${rammetto.className} bg-orange-700 text-white text-2xl p-2 px-6 rounded-full`}>{playerName}</span>
           </div>
-        )}
-        {showFeedback && (
-          <button
-            onClick={handleNextQuestion}
-            className="bg-blue-500 text-white py-2 px-4 rounded absolute bottom-4 left-1/2 transform -translate-x-1/2"
-          >
-            {questionIndex + 1 >= questions.length ? 'Finalizar Quiz' : 'Próxima Pergunta'}
-          </button>
-        )}
+        </div>
+        <div className={`${patrick.className} text-center mx-60  h-[460px] flex flex-col justify-between`}>
+          <div>
+            <p className="text-3xl text-amber-700 font-bold">{currentQuestion.question}</p>
+            <ul className="mt-4 text-2xl text-amber-700">
+              {currentQuestion.answers.map((option, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => handleAnswerSelect(index)}
+                    className={`w-full px-14 p-2 rounded-lg font-semibold text-left mb-2 hover:bg-amber-600 hover:text-amber-600 hover:bg-opacity-15 ${
+                      selectedAnswer === index
+                        ? option.isCorrect
+                          ? 'bg-green-800 text-green-800 bg-opacity-25'
+                          : 'bg-red-600 text-red-800 bg-opacity-25'
+                        : ''
+                    } ${flashIndex === index ? 'flash' : ''}`}
+                    disabled={showFeedback}
+                  >
+                    <span className="text-center bg-amber-300 bg-opacity-25 rounded  px-1 mr-1">{answerLabels[index]}</span> {option.text}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {showFeedback && !questions[questionIndex].answers[selectedAnswer!].isCorrect && (
+            <div className="text-lg text-center text-red-600 bg-amber-500 bg-opacity-10 rounded-lg p-1 mb-4 w-full">
+              <p>{explanation}</p>
+            </div>
+          )}
+          {showFeedback && (
+            <div className="text-center">
+              <button
+                onClick={handleNextQuestion}
+                className={`${rammetto.className} bg-[#bf360c] border-2 border-orange-800 text-white text-sm py-4 px-4 rounded-lg w-fit`}
+              >
+                {questionIndex + 1 >= questions.length ? 'Finalizar Quiz' : 'Próxima Pergunta'}
+              </button>
+            </div>
+          )}
+          {isPlaying !== null && (
+            <button
+              onClick={toggle}
+              className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
+            >
+              {isPlaying ? '🔊' : '🔇'}
+            </button>
+          )}
+
+        <button
+          onClick={handleHome}
+          className="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
+        >
+          🏠
+        </button>
+        </div>
+        <div className="flex justify-between w-full px-56 pb-10">
+          <div className={`${rammetto.className} text-2xl text-white font-bold bg-orange-600 px-4 py-3 rounded-3xl min-w-48 flex items-center gap-2`}>
+            <span>{score}</span> <span className="text-sm">pontos</span>
+          </div>
+          <div className="flex items-center justify-between text-xl text-amber-700 font-bold bg-orange-600 px-4 py-1 rounded-3xl min-w-48 mr-2 gap-1">
+            <Image src="/clock-icon.png" alt="Clock Icon" width={48} height={48} />
+            <span className={`${rammetto.className} text-2xl text-white min-w-30 mr-1`}>{formatTime(elapsedTime)}</span>
+          </div>
+        </div>
       </div>
     </div>
   );

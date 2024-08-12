@@ -1,14 +1,17 @@
+// app/page.tsx
 'use client';
 
+import { useState } from 'react';
 import CustomHomeButton from '@/components/CustomHomeButton';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useAudio from '@/hooks/useAudio';
-
+import InfoModal from '@/components/InfoModal';
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
   const router = useRouter();
-  const { isPlaying, toggle } = useAudio('/bg-home.mp3');
+  const { isPlaying, toggle, playAudio } = useAudio('/bg-home.mp3', true);
 
   const handleStartClassMode = () => {
     router.push('/classMode/select');
@@ -16,6 +19,13 @@ export default function Home() {
 
   const handleRanking = () => {
     router.push('/ranking');
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    if (isPlaying) {
+      playAudio(); // Toca a música quando o modal for fechado e a música estiver ativada
+    }
   };
 
   return (
@@ -38,12 +48,6 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-center space-x-4">
-          {/* <button
-            onClick={handleStart}
-            className={`${rammetto.className} bg-yellow-500 text-white py-2 px-4 rounded-3xl text-2xl  border-4 border-white`}
-          >
-            Iniciar Jogo
-          </button> */}
           <CustomHomeButton
             color="yellow"
             text="Iniciar Jogo"
@@ -64,6 +68,8 @@ export default function Home() {
       >
          {isPlaying ? '🔊' : '🔇'}
       </button>
+
+      <InfoModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

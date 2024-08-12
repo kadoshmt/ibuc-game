@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Session ID is required' }, { status: 400 });
   }
 
-  const session = getSession(id);
+  const session = await getSession(id);
   if (!session) {
     return NextResponse.json({ error: 'Session not found' }, { status: 404 });
   }
@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   const { levelId, moduleId, lessonId } = await req.json();
-  const sessionId = createSession({ levelId, moduleId, lessonId, score: 0, time: 0 });
+  const sessionId = await createSession({ levelId, moduleId, lessonId, score: 0, time: 0 });
   return NextResponse.json({ sessionId }, { status: 201 });
 }
 
@@ -30,11 +30,11 @@ export async function PUT(req: NextRequest) {
   }
 
   const { score, time } = await req.json();
-  const session = getSession(id);
+  const session = await getSession(id);
   if (!session) {
     return NextResponse.json({ error: 'Session not found' }, { status: 404 });
   }
 
-  updateSession(id, { ...session, score, time });
+  await updateSession(id, { score, time });
   return NextResponse.json({ message: 'Session updated' });
 }

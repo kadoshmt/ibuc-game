@@ -16,6 +16,11 @@
   }
 }
 
+html {
+  scroll-behavior: auto;
+}
+
+
 /* Estilos comuns */
 .homeButton {
   box-shadow: inset 0px 1px 0px 0px #f9eca0;
@@ -65,4 +70,13 @@
 .homeButton-green:active {
   top: 1px;
   position: relative;
+}
+
+.flash {
+  animation: flash-animation 0.5s ease-in-out infinite;
+}
+
+@keyframes flash-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

@@ -32,6 +32,24 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
     }
   }, []);
 
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newName = e.target.value;
+    setName(newName);
+    localStorage.setItem('playerName', newName);
+  };
+
+  const handleNextOption = () => {
+    const newOption = (currentOption + 1) % characterOptions.length;
+    setCurrentOption(newOption);
+    localStorage.setItem('playerGender', characterOptions[newOption].gender);
+  };
+
+  const handlePrevOption = () => {
+    const newOption = (currentOption - 1 + characterOptions.length) % characterOptions.length;
+    setCurrentOption(newOption);
+    localStorage.setItem('playerGender', characterOptions[newOption].gender);
+  };
+
   const handleNext = () => {
     if (name) {
       localStorage.setItem('playerName', name);
@@ -40,37 +58,29 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
     }
   };
 
-  const handleNextOption = () => {
-    setCurrentOption((prev) => (prev + 1) % characterOptions.length);
-  };
-
-  const handlePrevOption = () => {
-    setCurrentOption((prev) => (prev - 1 + characterOptions.length) % characterOptions.length);
-  };
-
   return (
     <div className={`w-full md:w-1/2 p-8 pr-14 ${isVisible ? 'block' : 'hidden md:block'}`}>
-      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold mb-8 text-center`}>Aventureiro(a)</h1>
+      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1`}>Aventureiro(a)</h1>
       <input
         type="text"
         placeholder="Nome do Jogador"
         value={name}
-        onChange={(e) => setName(e.target.value)}
-        className={`${rammetto.className} text-red-700 text-center w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500`}
+        onChange={handleNameChange}
+        className={`${rammetto.className} text-red-700 text-center w-full p-2 border-2 rounded-lg mt-8 mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500`}
       />
-      <div className="flex justify-center items-center mt-12 mb-4">
-        <button onClick={handlePrevOption} className="text-3xl text-amber-900 p-2">{'◄'}</button>
-        <div className="mx-4 text-center">
+      <div className="flex justify-center items-center mt-8 mb-4">
+        <button onClick={handlePrevOption} className="text-3xl text-amber-900 pr-2">{'◄'}</button>
+        <div className=" text-center">
           <Image
             src={characterOptions[currentOption].image}
             alt={characterOptions[currentOption].label}
-            width={300}
-            height={256}
-            className="rounded-full"
+            width={400}
+            height={341}
+            className=""
           />
           <p className={`${rammetto.className} mt-2 text-1xl text-amber-900`}>{characterOptions[currentOption].label}</p>
         </div>
-        <button onClick={handleNextOption} className="text-3xl  text-amber-900 p-2">{'►'}</button>
+        <button onClick={handleNextOption} className="text-3xl  text-amber-900">{'►'}</button>
       </div>
       <div className='flex mx-auto'>
         <button

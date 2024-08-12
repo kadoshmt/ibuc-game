@@ -28,20 +28,20 @@ const LessonSelection: React.FC<LessonSelectionProps> = ({ onSelection, isVisibl
 
   return (
     <div className={`w-full md:w-1/2 p-8 pr-16 ${isVisible ? 'block' : 'hidden md:block'}`}>
-      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold mb-8 text-center`}>Escolha a Lição</h1>
-      <div className="mb-4">
+      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1`}>Escolha a Lição</h1>
+      <div className="mb-5 mt-8">
         <LevelSelector onChange={setLevel} />
       </div>
-      <div className="mb-4">
+      <div className="mb-5">
         <ModuleSelector onChange={setModule} />
       </div>
-      <div className="mb-4">
+      <div className="mb-5">
         <LessonSelector onChange={setLesson} />
       </div>
-      <div className='text-center'>
+      <div className='text-center mt-5'>
       <button
         onClick={handleSelect}
-        className={`${rammetto.className} bg-amber-900 text-white py-2 px-4 rounded-lg`}
+        className={`${rammetto.className} bg-amber-900 text-white py-2 px-4 rounded-lg hover:bg-amber-700 hover:shadow-amber-700 shadow transition-all`}
       >
         Iniciar Quiz
       </button>

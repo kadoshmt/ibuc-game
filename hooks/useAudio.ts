@@ -1,40 +1,49 @@
-// useAudio.tsx
-import { useEffect, useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
-const useAudio = (src: string) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    audioRef.current = new Audio(src);
-    audioRef.current.loop = true;
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
-  }, [src]);
+export default function useAudio(url: string, loop = true) {
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean | null>(null); // Inicia como `null` para evitar renderização inconsistente
 
   useEffect(() => {
-    const handlePlay = async () => {
-      try {
-        if (isPlaying && audioRef.current) {
-          await audioRef.current.play();
-        } else if (!isPlaying && audioRef.current) {
-          audioRef.current.pause();
-        }
-      } catch (error) {
-        console.error('Audio playback failed:', error);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const newAudio = new Audio(url);
+      newAudio.loop = loop;
+      setAudio(newAudio);
+      
+      const storedPreference = localStorage.getItem('gameMusic');
+      setIsPlaying(storedPreference !== null ? JSON.parse(storedPreference) : true);
+    }
+  }, [url, loop]);
 
-    handlePlay();
-  }, [isPlaying]);
+  useEffect(() => {
+    if (audio && isPlaying !== null) {
+      isPlaying ? audio.play() : audio.pause();
+    }
+  }, [isPlaying, audio]);
 
-  const toggle = () => setIsPlaying((prev) => !prev);
+  const toggle = () => {
+    setIsPlaying((prev) => {
+      const newValue = !prev!;
+      localStorage.setItem('gameMusic', JSON.stringify(newValue));
+      return newValue;
+    });
+  };
 
-  return { isPlaying, toggle };
-};
+  const playAudio = () => {
+    if (audio) {
+      audio.play();
+    }
+  };
 
-export default useAudio;
+  useEffect(() => {
+    if (audio) {
+      audio.addEventListener('ended', () => setIsPlaying(false));
+      return () => {
+        audio.pause();
+        audio.currentTime = 0;
+      };
+    }
+  }, [audio]);
+
+  return { isPlaying, toggle, playAudio };
+}
