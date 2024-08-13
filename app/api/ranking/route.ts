@@ -4,21 +4,32 @@ import prisma from '@/prisma/prisma-client';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const mode = searchParams.get('mode');
+  const playerName = searchParams.get('playerName');
 
   if (!mode) {
     return NextResponse.json({ error: 'Modo de jogo não especificado' }, { status: 400 });
   }
 
   try {
-    const rankings = await prisma.ranking.findMany({
+    // Busca o ranking completo, ordenado por totalScore e totalTime
+    const allRankings = await prisma.ranking.findMany({
       where: { mode },
       orderBy: [
         { totalScore: 'desc' },
         { totalTime: 'asc' },
       ],
-      take: 10, // Limita a 10 melhores pontuações
     });
-    return NextResponse.json(rankings);
+
+    // Calcula a posição do jogador, se o playerName for fornecido
+    let playerPosition = null;
+    if (playerName) {
+      playerPosition = allRankings.findIndex(rank => rank.playerName === playerName) + 1;
+    }
+
+    // Limita a resposta a 10 melhores pontuações
+    const topRankings = allRankings.slice(0, 10);
+
+    return NextResponse.json({ rankings: topRankings, playerPosition });
   } catch (error) {
     return NextResponse.json({ error: 'Erro ao buscar rankings' }, { status: 500 });
   }

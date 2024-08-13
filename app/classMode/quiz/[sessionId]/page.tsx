@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { shuffle } from '@/utils/shuffle';
 import { Question } from '@/types';
-import { Patrick_Hand, Rammetto_One } from 'next/font/google';
+import { Patrick_Hand, Rammetto_One, Spline_Sans_Mono } from 'next/font/google';
 import Image from 'next/image';
 import { playCorrectSound, playIncorrectSound } from '@/utils/soundEffects';
 import FullScreenLoader from '@/components/FullScreenLoader';
@@ -12,6 +12,7 @@ import useAudio from '@/hooks/useAudio';
 
 const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 const patrick = Patrick_Hand({ subsets: ["latin"], weight: "400" });
+const fontNumbers = Spline_Sans_Mono({ subsets: ["latin"], weight: "700" });
 
 export default function Quiz() {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -22,7 +23,7 @@ export default function Quiz() {
   const [loading, setLoading] = useState(true);
   const [explanation, setExplanation] = useState('');
   const [startTime, setStartTime] = useState<number>(0);
-  const [elapsedTime, setElapsedTime] = useState<number>(0);
+  const [elapsedTime, setElapsedTime] = useState<number | null>(null);
   const [flashIndex, setFlashIndex] = useState<number | null>(null);
   const [playerName, setPlayerName] = useState<string>('');
   const [playerGender, setPlayerGender] = useState<string>('');
@@ -54,6 +55,7 @@ export default function Quiz() {
               setQuestions(shuffledQuestions);
               setLoading(false); // Desativa o carregamento quando os dados estiverem prontos
               setStartTime(Date.now()); // Define o tempo de início quando as perguntas são carregadas
+              setElapsedTime(0);
             } else {
               router.push('/');
             }
@@ -74,11 +76,19 @@ export default function Quiz() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setElapsedTime(Date.now() - startTime);
+      if (startTime) {
+        setElapsedTime(Date.now() - startTime);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, [startTime]);
+
+  useEffect(() => {
+    if (!loading && startTime === 0) {
+      setStartTime(Date.now());
+    }
+  }, [loading, startTime]);
 
   useEffect(() => {
     const name = localStorage.getItem('playerName') || '';
@@ -87,7 +97,10 @@ export default function Quiz() {
     setPlayerGender(gender);
   }, []);
 
-  const formatTime = (time: number) => {
+  const formatTime = (time: number | null) => {
+    if (time === null) {
+      return '00:00';
+    }
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
     return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
@@ -146,7 +159,7 @@ export default function Quiz() {
 
     setTimeout(() => {
       setFlashIndex(null);
-    }, 2000);
+    }, 1500);
   };
 
   if (loading) {
@@ -179,7 +192,7 @@ export default function Quiz() {
                 <li key={index}>
                   <button
                     onClick={() => handleAnswerSelect(index)}
-                    className={`w-full px-14 p-2 rounded-lg font-semibold text-left mb-2 hover:bg-amber-600 hover:text-amber-600 hover:bg-opacity-15 ${
+                    className={`w-full px-14 p-2 rounded-lg font-semibold text-left mb-2 ${!showFeedback ? 'hover:bg-amber-600 hover:text-amber-600 hover:bg-opacity-15' : ''} ${
                       selectedAnswer === index
                         ? option.isCorrect
                           ? 'bg-green-800 text-green-800 bg-opacity-25'
@@ -226,12 +239,12 @@ export default function Quiz() {
         </button>
         </div>
         <div className="flex justify-between w-full px-56 pb-10">
-          <div className={`${rammetto.className} text-2xl text-white font-bold bg-orange-600 px-4 py-3 rounded-3xl min-w-48 flex items-center gap-2`}>
-            <span>{score}</span> <span className="text-sm">pontos</span>
+          <div className={`${fontNumbers.className} text-3xl text-white font-bold bg-orange-600 px-2 py-2 rounded-3xl min-w-36 flex items-center gap-3`}>
+             <span className=""><Image src="/coin-star.png" alt="Pontos" width={36} height={36} /></span><span>{score}</span>
           </div>
-          <div className="flex items-center justify-between text-xl text-amber-700 font-bold bg-orange-600 px-4 py-1 rounded-3xl min-w-48 mr-2 gap-1">
-            <Image src="/clock-icon.png" alt="Clock Icon" width={48} height={48} />
-            <span className={`${rammetto.className} text-2xl text-white min-w-30 mr-1`}>{formatTime(elapsedTime)}</span>
+          <div className="flex items-center justify-between text-xl text-amber-700 font-bold bg-orange-600 px-2 py-2 rounded-3xl min-w-36 mr-2 gap-1">
+            <Image src="/clock.png" alt="Tempo" width={36} height={36} />            
+            <span className={`${fontNumbers.className} text-3xl font-bold text-white min-w-30 mr-1`}>{formatTime(elapsedTime)}</span>
           </div>
         </div>
       </div>
