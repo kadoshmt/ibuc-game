@@ -1,4 +1,3 @@
-// prisma-client.ts
 import { PrismaClient } from '@prisma/client';
 import { Client } from 'pg';
 import fs from 'fs';
@@ -18,13 +17,28 @@ const client = new Client({
 
 client.connect();
 
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      // Não especifica ssl aqui, pois Prisma não suporta essa configuração
-      url: process.env.DATABASE_URL,
+let prisma: PrismaClient;
+
+if (process.env.NODE_ENV === 'production') {
+  prisma = new PrismaClient({
+    datasources: {
+      db: {
+        // Não especifica ssl aqui, pois Prisma não suporta essa configuração
+        url: process.env.DATABASE_URL,
+      },
     },
-  },
-});
+  });
+} else {
+  if (!(global as any).prisma) {
+    (global as any).prisma = new PrismaClient({
+      datasources: {
+        db: {
+          url: process.env.DATABASE_URL,
+        },
+      },
+    });
+  }
+  prisma = (global as any).prisma;
+}
 
 export default prisma;
