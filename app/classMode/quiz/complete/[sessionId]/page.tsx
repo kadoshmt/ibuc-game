@@ -22,7 +22,7 @@ export default function QuizComplete() {
   const [background, setBackground] = useState('/board-win.png');
   const [stars, setStars] = useState<string[]>([]);
   const [audioUrl, setAudioUrl] = useState('/bg-victory.mp3');
-  const { isPlaying, toggle } = useAudio(audioUrl, false);
+  const { isPlaying, toggle } = useAudio(audioUrl, false, true, !loading);
   const savedRef = useRef(false);
   const playerName = typeof window !== 'undefined' ? localStorage.getItem('playerName') || 'Visitante' : 'Visitante';
   const playerGender = typeof window !== 'undefined' ? localStorage.getItem('playerGender') || 'menino' : 'menino';
@@ -33,7 +33,7 @@ export default function QuizComplete() {
         return { src: '/avatar-boy.png', bgColor: 'bg-blue-500' };
       case 'menina':
         return { src: '/avatar-girl.png', bgColor: 'bg-pink-500' };
-      case 'sala-de-aula-time':
+      case 'equipe':
       default:
         return { src: '/avatar-team.png', bgColor: 'bg-yellow-500' };
     }
@@ -49,19 +49,25 @@ export default function QuizComplete() {
   useEffect(() => {
     const determineStars = (score: number) => {
       if (score === 1000) return ['/filled-star.png', '/filled-star.png', '/filled-star.png'];
-      if (score >= 700) return ['/filled-star.png', '/filled-star.png', '/blank-star.png'];
-      if (score >= 300) return ['/filled-star.png', '/blank-star.png', '/blank-star.png'];
+      if (score >= 600) return ['/filled-star.png', '/filled-star.png', '/blank-star.png'];
+      if (score >= 200) return ['/filled-star.png', '/blank-star.png', '/blank-star.png'];
       return ['/blank-star.png', '/blank-star.png', '/blank-star.png'];
     };
 
     const determineBackgroundAndAudio = (score: number) => {
-      if (score < 300) {
+      if (score < 200) {
         setBackground('/board-lose.png');
         setAudioUrl('/bg-lose.mp3');
       } else {
         setBackground('/board-win.png');
         setAudioUrl('/bg-victory.mp3');
       }
+    };
+
+    const deleteSession = async () => {
+      await fetch(`/api/session?id=${sessionId}`, {
+        method: 'DELETE',
+      });
     };
 
     const fetchSession = async () => {
@@ -82,18 +88,20 @@ export default function QuizComplete() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 playerName,
-                totalScore: data.score,
+                genre: playerGender,
                 totalTime: data.time,
                 mode: 'default',
               }),
             });
-
+          
             savedRef.current = true;
           }
 
-          const response = await fetch(`/api/ranking?mode=default&playerName=${playerName}`);
-          const ranking = await response.json();
+          const rankingResponse = await fetch(`/api/ranking?mode=default&playerName=${playerName}`);
+          const ranking = await rankingResponse.json();
           setMyRank(ranking.playerPosition);
+
+          await deleteSession(); // Apaga a sessão após salvar o resultado e pegar o ranking
 
           setLoading(false);
         } else {
@@ -105,7 +113,7 @@ export default function QuizComplete() {
     };
 
     fetchSession();
-  }, [sessionId, router, playerName]);
+  }, [sessionId, router, playerName, playerGender]);
 
   if (loading) return <FullScreenLoader />;
 
@@ -152,20 +160,20 @@ export default function QuizComplete() {
           </div>
         </div>        
         
-        {isPlaying !== null && (
+        {/* {isPlaying !== null && (
           <button
             onClick={toggle}
             className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
           >
             {isPlaying ? '🔊' : '🔇'}
           </button>
-        )}
+        )} */}
 
-        {/* {isPlaying !== null && (
+        {isPlaying !== null && (
           <div className="fixed bottom-8 left-8 flex items-center justify-center">
             {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
           </div>
-        )} */}
+        )}
       </div>
     </>
   );

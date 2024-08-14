@@ -15,7 +15,7 @@ interface PlayerInfoProps {
 const characterOptions = [
   { gender: 'menino', image: '/boy.png', label: 'Menino' },
   { gender: 'menina', image: '/girl.png', label: 'Menina' },
-  { gender: 'sala-de-aula-time', image: '/team.png', label: 'Sala de Aula /Time' },
+  { gender: 'equipe', image: '/team.png', label: 'Equipe' },
 ];
 
 const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
