@@ -5,24 +5,10 @@ const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 
 interface LessonSelectorProps {
   onChange: (value: number) => void;
+  lessons: { id: number, name: string }[];
 }
 
-const LessonSelector: React.FC<LessonSelectorProps> = ({ onChange }) => {
-  const lessons = [
-    { id: 1, name: '01 - O que é a Bíblia' },
-    { id: 2, name: '02 - A Bíblia é um livro?' },
-    { id: 3, name: '03 - A Bíblia foi escrita em que idioma?' },
-    { id: 4, name: '04 - Por que a minha Bíblia parece ser diferente?' },
-    { id: 5, name: '05 - A Bíblia está em ordem cronológica?' },
-    { id: 6, name: '06 - O Antigo Testamento' },
-    { id: 7, name: '07 - O grande exemplo de Deus' },
-    { id: 8, name: '08 - O Novo Testamento' },
-    { id: 9, name: '09 - Qual o objetivo da Bíblia?' },
-    { id: 10, name: '10 - Quem é Jesus?' },
-    { id: 11, name: '11 - Provas Bíblicas que Jesus é Deus' },
-    { id: 12, name: '12 - Jesus, o caminho, a verdade e a vida' },
-  ];
-
+const LessonSelector: React.FC<LessonSelectorProps> = ({ onChange, lessons }) => {
   return (
     <div>
       <label className="block mb-2 font-bold">Selecione a Lição:</label>

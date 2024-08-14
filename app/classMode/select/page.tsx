@@ -7,6 +7,7 @@ import LessonSelection from '@/components/LessonSelection';
 import FullScreenLoader from '@/components/FullScreenLoader';
 import { Rammetto_One } from "next/font/google";
 import useAudio from '@/hooks/useAudio';
+import IconButton from '@/components/IconButton';
 
 const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,7 @@ export default function QuizSelect() {
   const [gender, setGender] = useState('');
   const [loading, setLoading] = useState(true); // Inicia como true para exibir o loader
   const [sessionId, setSessionId] = useState<string | null>(null);
-  const { isPlaying, toggle } = useAudio('/bg-selection.mp3');
+  const { isPlaying, toggle } = useAudio('/bg-selection.mp3', true, true, !loading);
   const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
 
@@ -67,7 +68,7 @@ export default function QuizSelect() {
           <PlayerInfo onNext={handleNextStep} isVisible={step === 1} />
           <LessonSelection onSelection={handleSelection} isVisible={step === 2} />
         </div>
-        {isPlaying !== null && (
+        {/* {isPlaying !== null && (
           <button
             onClick={toggle}
             className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
@@ -80,7 +81,17 @@ export default function QuizSelect() {
           className="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
         >
           🏠
-        </button>
+        </button> */}
+
+        {isPlaying !== null && (
+          <div className="fixed bottom-8 left-8 flex items-center justify-center">
+            {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
+          </div>
+        )}
+
+      <div className="fixed bottom-8 right-8 flex items-center justify-center">
+        <IconButton name="home" size={72} onClick={handleHome} />
+      </div>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { playCorrectSound, playIncorrectSound } from '@/utils/soundEffects';
 import FullScreenLoader from '@/components/FullScreenLoader';
 import useAudio from '@/hooks/useAudio';
+import IconButton from '@/components/IconButton';
 
 const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 const patrick = Patrick_Hand({ subsets: ["latin"], weight: "400" });
@@ -30,7 +31,7 @@ export default function Quiz() {
   const router = useRouter();
   const { sessionId } = useParams();
 
-  const { isPlaying, toggle } = useAudio('/bg-quiz-classmode.mp3');
+  const { isPlaying, toggle } = useAudio('/bg-quiz-classmode.mp3', true, true, !loading);
 
   const answerLabels = ['A', 'B', 'C', 'D'];
 
@@ -112,7 +113,7 @@ export default function Quiz() {
         return { src: '/avatar-boy.png', bgColor: 'bg-blue-500' };
       case 'menina':
         return { src: '/avatar-girl.png', bgColor: 'bg-pink-500' };
-      case 'sala-de-aula-time':
+      case 'equipe':
       default:
         return { src: '/avatar-team.png', bgColor: 'bg-yellow-500' };
     }
@@ -137,10 +138,22 @@ export default function Quiz() {
     }
   };
 
-  const handleHome = () => {
-    router.push('/');
+  const deleteSession = async () => {
+    if (sessionId) {
+      try {
+        await fetch(`/api/session?id=${sessionId}`, {
+          method: 'DELETE',
+        });
+      } catch (error) {
+        console.error('Error deleting session:', error);
+      }
+    }
   };
 
+  const handleSelect = async () => {
+    await deleteSession();
+    router.push('/classMode/select');
+  };
   const handleAnswerSelect = (index: number) => {
     setSelectedAnswer(index);
     const answer = questions[questionIndex].answers[index];
@@ -222,21 +235,17 @@ export default function Quiz() {
               </button>
             </div>
           )}
-          {isPlaying !== null && (
-            <button
-              onClick={toggle}
-              className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
-            >
-              {isPlaying ? '🔊' : '🔇'}
-            </button>
-          )}
 
-        <button
-          onClick={handleHome}
-          className="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
-        >
-          🏠
-        </button>
+          {isPlaying !== null && (
+          <div className="fixed bottom-8 left-8 flex items-center justify-center">
+            {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
+          </div>
+        )}
+
+        <div className="fixed bottom-8 right-8 flex items-center justify-center">
+          <IconButton name="try-again" size={72} onClick={handleSelect} />
+        </div>
+
         </div>
         <div className="flex justify-between w-full px-56 pb-10">
           <div className={`${fontNumbers.className} text-3xl text-white font-bold bg-orange-600 px-2 py-2 rounded-3xl min-w-36 flex items-center gap-3`}>

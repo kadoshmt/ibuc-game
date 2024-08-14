@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createSession, getSession, updateSession } from '@/utils/sessionCache';
+import { createSession, getSession, updateSession, deleteSession } from '@/utils/sessionCache';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -37,4 +37,20 @@ export async function PUT(req: NextRequest) {
 
   await updateSession(id, { score, time });
   return NextResponse.json({ message: 'Session updated' });
+}
+
+export async function DELETE(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get('id');
+  if (!id) {
+    return NextResponse.json({ error: 'Session ID is required' }, { status: 400 });
+  }
+
+  const session = await getSession(id);
+  if (!session) {
+    return NextResponse.json({ error: 'Session not found' }, { status: 404 });
+  }
+
+  await deleteSession(id);
+  return NextResponse.json({ message: 'Session deleted' }, { status: 200 });
 }

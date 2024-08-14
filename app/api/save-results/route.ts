@@ -2,11 +2,12 @@ import { NextResponse } from 'next/server';
 import prisma from '@/prisma/prisma-client';
 
 export async function POST(req: Request) {
-  const { playerName, totalScore, totalTime, mode } = await req.json();
+  const { playerName, genre, totalScore, totalTime, mode } = await req.json();
   try {
     const newRanking = await prisma.ranking.create({
       data: {
         playerName,
+        genre,
         totalScore,
         totalTime,
         mode,
