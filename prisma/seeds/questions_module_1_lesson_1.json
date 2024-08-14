@@ -8,7 +8,7 @@
     "lessonId": 1,
     "answers": [
       { "text": "Um livro de histórias", "isCorrect": false, "explanation": "Embora contenha histórias, a Bíblia é mais do que isso." },
-      { "text": "Um manual de vida", "isCorrect": true, "explanation": "" },
+      { "text": "Um conjunto de livros", "isCorrect": true, "explanation": "" },
       { "text": "Um dicionário", "isCorrect": false, "explanation": "A Bíblia não é um dicionário." },
       { "text": "Um romance", "isCorrect": false, "explanation": "A Bíblia não é um romance." }
     ]
