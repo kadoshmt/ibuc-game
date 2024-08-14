@@ -20,7 +20,7 @@ export default function GenerateTest() {
         <ModuleSelector onChange={setModule} />
       </div>
       <div className="mb-4">
-        <LessonSelector onChange={setLesson} />
+      <LessonSelector onChange={setLesson} lessons={[{ id: 1, name: ""}]} />
       </div>
     </div>
   );
