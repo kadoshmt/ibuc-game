@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useAudio from '@/hooks/useAudio';
 import InfoModal from '@/components/InfoModal';
+import IconButton from '@/components/IconButton';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
@@ -50,24 +51,19 @@ export default function Home() {
         <div className="flex justify-center space-x-4">
           <CustomHomeButton
             color="yellow"
-            text="Iniciar Jogo"
+            text="Iniciar Aventura"
             onClick={handleStartClassMode}
           />
         </div>
       </div>
-      <button
-        onClick={handleRanking}
-        className="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
-      >
-        🏆
-      </button>
       
-      <button
-        onClick={toggle}
-        className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
-      >
-         {isPlaying ? '🔊' : '🔇'}
-      </button>
+      <div className="fixed bottom-8 left-8 flex items-center justify-center">
+        {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
+      </div>
+
+      <div className="fixed bottom-8 right-8 flex items-center justify-center">
+        <IconButton name="ranking" size={72} onClick={handleRanking} />
+      </div>
 
       <InfoModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
