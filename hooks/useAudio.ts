@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 
-export default function useAudio(url: string, loop = true) {
+export default function useAudio(url: string, loop = true, disableAutoStop = false, shouldPlay = true) {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean | null>(null); // Inicia como `null` para evitar renderização inconsistente
+  const [isPlaying, setIsPlaying] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const newAudio = new Audio(url);
       newAudio.loop = loop;
       setAudio(newAudio);
-      
+
       const storedPreference = localStorage.getItem('gameMusic');
       setIsPlaying(storedPreference !== null ? JSON.parse(storedPreference) : true);
     }
   }, [url, loop]);
 
   useEffect(() => {
-    if (audio && isPlaying !== null) {
+    if (audio && isPlaying !== null && shouldPlay) {
       isPlaying ? audio.play() : audio.pause();
     }
-  }, [isPlaying, audio]);
+  }, [isPlaying, audio, shouldPlay]);
 
   const toggle = () => {
     setIsPlaying((prev) => {
@@ -37,13 +37,20 @@ export default function useAudio(url: string, loop = true) {
 
   useEffect(() => {
     if (audio) {
-      audio.addEventListener('ended', () => setIsPlaying(false));
+      const handleEnded = () => {
+        if (!disableAutoStop) {
+          setIsPlaying(false);
+        }
+      };
+
+      audio.addEventListener('ended', handleEnded);
       return () => {
         audio.pause();
         audio.currentTime = 0;
+        audio.removeEventListener('ended', handleEnded);
       };
     }
-  }, [audio]);
+  }, [audio, disableAutoStop]);
 
   return { isPlaying, toggle, playAudio };
 }
