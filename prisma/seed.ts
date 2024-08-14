@@ -12,7 +12,7 @@ async function loadJSON(filePath: string) {
 async function main() {
   const levels = await loadJSON(path.join(__dirname, 'seeds', 'levels.json'));
   const modules = await loadJSON(path.join(__dirname, 'seeds', 'modules.json'));
-  const lessonsModule1 = await loadJSON(path.join(__dirname, 'seeds', 'lessons_module_1.json'));
+  const lessonsModules = await loadJSON(path.join(__dirname, 'seeds', 'lessons_modules.json'));
   const questionsModule1Lesson1 = await loadJSON(path.join(__dirname, 'seeds', 'questions_module_1_lesson_1.json'));
 
   // Seed Levels
@@ -25,8 +25,8 @@ async function main() {
     await prisma.module.create({ data: moduleData });
   }
 
-  // Seed Lessons for Module 1
-  for (const lesson of lessonsModule1) {
+  // Seed Lessons
+  for (const lesson of lessonsModules) {
     await prisma.lesson.create({ data: lesson });
   }
 
