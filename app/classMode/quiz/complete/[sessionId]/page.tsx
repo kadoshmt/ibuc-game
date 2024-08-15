@@ -90,6 +90,7 @@ export default function QuizComplete() {
                 playerName,
                 genre: playerGender,
                 totalTime: data.time,
+                totalScore: data.score,
                 mode: 'default',
               }),
             });
