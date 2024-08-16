@@ -19,7 +19,7 @@ export default function RankingPage() {
     fetch(`/api/ranking?mode=${mode}`)
       .then((res) => res.json())
       .then((data) => {
-        setRankings(data);
+        setRankings(data.rankings);
         setLoading(false);
       })
       .catch((error) => {
@@ -40,7 +40,7 @@ export default function RankingPage() {
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="relative w-[800px] h-[600px] bg-white shadow-lg rounded-lg p-8 overflow-hidden">
         <h1 className="text-2xl font-bold mb-4">Ranking</h1>
-        <div className="flex justify-center mb-4 space-x-4">
+        <div className="flex justify-center mb-4 space-x-4 hidden">
           <button
             onClick={() => handleModeChange('default')}
             className={`py-2 px-4 rounded ${mode === 'default' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
@@ -61,26 +61,28 @@ export default function RankingPage() {
           </button>
         </div>
         {rankings.length > 0 ? (
-          <table className="min-w-full bg-white">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 bg-gray-200">Posição</th>
-                <th className="py-2 px-4 bg-gray-200">Nome</th>
-                <th className="py-2 px-4 bg-gray-200">Pontuação</th>
-                <th className="py-2 px-4 bg-gray-200">Tempo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rankings.map((ranking, index) => (
-                <tr key={ranking.id} className="text-center">
-                  <td className="py-2 px-4">{index + 1}</td>
-                  <td className="py-2 px-4">{ranking.playerName}</td>
-                  <td className="py-2 px-4">{ranking.totalScore}</td>
-                  <td className="py-2 px-4">{ranking.totalTime}</td>
+          <div className="max-h-[400px] overflow-y-auto"> {/* Adicionei o scroll vertical aqui */}
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th className="py-2 px-4 bg-gray-200">Posição</th>
+                  <th className="py-2 px-4 bg-gray-200">Nome</th>
+                  <th className="py-2 px-4 bg-gray-200">Pontuação</th>
+                  <th className="py-2 px-4 bg-gray-200">Tempo</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {rankings.map((ranking, index) => (
+                  <tr key={ranking.id} className="text-center">
+                    <td className="py-2 px-4">{index + 1}</td>
+                    <td className="py-2 px-4">{ranking.playerName}</td>
+                    <td className="py-2 px-4">{ranking.totalScore}</td>
+                    <td className="py-2 px-4">{ranking.totalTime}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         ) : (
           <div className="text-center">Nenhum ranking disponível no momento.</div>
         )}

@@ -26,8 +26,8 @@ export async function GET(req: NextRequest) {
       playerPosition = allRankings.findIndex(rank => rank.playerName === playerName) + 1;
     }
 
-    // Limita a resposta a 10 melhores pontuações
-    const topRankings = allRankings.slice(0, 10);
+    // Limita a resposta a 15 melhores pontuações
+    const topRankings = allRankings.slice(0, 15);
 
     return NextResponse.json({ rankings: topRankings, playerPosition });
   } catch (error) {
