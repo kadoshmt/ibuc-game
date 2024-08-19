@@ -1,0 +1,53 @@
+/* app/styles/homePage.css */
+
+.home-container {
+  @apply flex items-center justify-center h-screen bg-cover bg-center overflow-hidden;
+}
+
+.home-content {
+  @apply text-center w-full h-auto flex flex-col items-center justify-center;
+}
+
+.home-title {
+  @apply flex justify-center mb-8;
+  width: 100%;
+  max-width: 600px; /* Tamanho máximo da imagem */
+  height: auto;
+}
+
+.responsiveLogo {
+  width: 100%; /* A imagem se ajustará ao tamanho da div */
+  height: auto; /* Mantém a proporção */
+  object-fit: cover; /* Ajusta como a imagem deve se comportar dentro do contêiner */
+}
+
+/* Ajusta a logo para 70% em dispositivos maiores */
+@media (max-width: 1024px) {
+  .responsiveLogo {
+    max-width: 70%;
+  }
+}
+
+/* Ajusta a logo para 50% em dispositivos menores */
+@media (max-width: 640px) {
+  .responsiveLogo {
+    max-width: 50%;
+  }
+}
+
+.home-button-group {
+  @apply flex justify-center space-x-4;
+}
+
+.home-music-control,
+.home-ranking-control {
+  @apply fixed bottom-2 flex items-center justify-center;
+}
+
+.home-music-control {
+  @apply left-2;
+}
+
+.home-ranking-control {
+  @apply right-2;
+}

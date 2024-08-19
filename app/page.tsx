@@ -1,14 +1,13 @@
-// app/page.tsx
 'use client';
 
 import { useState } from 'react';
-import CustomHomeButton from '@/components/CustomHomeButton';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useAudio from '@/hooks/useAudio';
 import InfoModal from '@/components/InfoModal';
 import IconButton from '@/components/IconButton';
 import Button from '@/components/Button';
+import '@/app/styles/homePage.css';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
@@ -32,38 +31,33 @@ export default function Home() {
 
   return (
     <div
-      className="flex items-center justify-center h-screen bg-cover bg-center"
+      className="home-container"
       style={{ backgroundImage: 'url(/home-screen.webp)' }}
     >
       <audio id="bg-music" loop>
         <source src="/bg-home.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
+        Seu navegador não suporta elementos de audio.
       </audio>
-      <div className="text-center w-[800px] h-[600px] flex flex-col p-8">
-        <div className="flex justify-center mb-8">
+      <div className="home-content">
+        <div className="home-title">
           <Image
             src="/game-title.png"
             width={600}
             height={255}
-            alt="Game Title"
-            className="w-[600px] h-[255px]"
+            alt="Game Title" 
+            className="responsiveLogo"
           />
         </div>
-        <div className="flex justify-center space-x-4">
-          {/*<CustomHomeButton
-            color="yellow"
-            text="Iniciar Aventura"
-            onClick={handleStartClassMode}
-          />*/} 
+        <div className="home-button-group">
           <Button onClick={handleStartClassMode} label={'Iniciar Aventura'} />
         </div>
       </div>
       
-      <div className="fixed bottom-8 left-8 flex items-center justify-center">
+      <div className="home-music-control">
         {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
       </div>
 
-      <div className="fixed bottom-8 right-8 flex items-center justify-center">
+      <div className="home-ranking-control">
         <IconButton name="ranking" size={72} onClick={handleRanking} />
       </div>
 
