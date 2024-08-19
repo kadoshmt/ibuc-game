@@ -23,9 +23,9 @@ html {
 ::-webkit-scrollbar-track
 {
 	border: 5px solid white;
-	/* border color does not support transparent on scrollbar
-	border-color: transparent; */
-	background-color: #b2bec3;
+	/* border color does not support transparent on scrollbar */
+	border-color: transparent; 
+	background-color: #E3C9A9;
 }
 
 ::-webkit-scrollbar
@@ -36,7 +36,7 @@ html {
 
 ::-webkit-scrollbar-thumb
 {
-	background-color: orange;
+	background-color: #EAA712;
 	border-radius: 10px;
 }
 

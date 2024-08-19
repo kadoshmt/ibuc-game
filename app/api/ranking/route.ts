@@ -11,6 +11,9 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    // Define o fator de penalidade para o tempo (ajuste conforme necessário)
+    const penaltyFactor = 2;
+
     // Busca o ranking completo, ordenado por totalScore e totalTime
     const allRankings = await prisma.ranking.findMany({
       where: { mode },
@@ -20,14 +23,23 @@ export async function GET(req: NextRequest) {
       ],
     });
 
+    // Calcula a pontuação final (média) para cada jogador
+    const rankingsWithMedia = allRankings.map((rank) => {
+      const media = rank.totalScore - (rank.totalTime / penaltyFactor);
+      return { ...rank, media };
+    });
+
+    // Ordena os rankings pela nova pontuação média
+    rankingsWithMedia.sort((a, b) => b.media - a.media);
+
     // Calcula a posição do jogador, se o playerName for fornecido
     let playerPosition = null;
     if (playerName) {
-      playerPosition = allRankings.findIndex(rank => rank.playerName === playerName) + 1;
+      playerPosition = rankingsWithMedia.findIndex(rank => rank.playerName === playerName) + 1;
     }
 
     // Limita a resposta a 15 melhores pontuações
-    const topRankings = allRankings.slice(0, 15);
+    const topRankings = rankingsWithMedia.slice(0, 15);
 
     return NextResponse.json({ rankings: topRankings, playerPosition });
   } catch (error) {
