@@ -1,0 +1,33 @@
+/* app/styles/infoModal.css */
+
+.info-modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50;
+}
+
+.info-modal-content {
+  @apply p-6 max-w-xl mx-auto text-center;
+  background-image: url('/board-wooden.png');
+  background-size: 100%;
+}
+
+.info-modal-logo {
+  @apply mx-auto;
+}
+
+.info-modal-text {
+  @apply text-white mb-4 px-4;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 1000px) {
+  .info-modal-content {
+    @apply p-4 max-w-md;    
+  }
+
+  .info-modal-logo {
+  }
+
+  .info-modal-text {
+    @apply text-xs;
+  }
+}
