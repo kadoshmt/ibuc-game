@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import useAudio from '@/hooks/useAudio';
 import InfoModal from '@/components/InfoModal';
 import IconButton from '@/components/IconButton';
+import Button from '@/components/Button';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
@@ -49,11 +50,12 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-center space-x-4">
-          <CustomHomeButton
+          {/*<CustomHomeButton
             color="yellow"
             text="Iniciar Aventura"
             onClick={handleStartClassMode}
-          />
+          />*/} 
+          <Button onClick={handleStartClassMode} label={'Iniciar Aventura'} />
         </div>
       </div>
       
