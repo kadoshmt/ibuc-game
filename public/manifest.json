@@ -1,6 +1,6 @@
 {
   "name": "Aventuras pela Bíblia",
-  "short_name": "App",
+  "short_name": "Aventuras pela Bíblia",
   "description": "Aprendendo a Bíblia Sagrada através de perguntas e respostas.",
   "start_url": "/",
   "display": "standalone",
