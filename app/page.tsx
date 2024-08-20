@@ -8,6 +8,7 @@ import InfoModal from '@/components/InfoModal';
 import IconButton from '@/components/IconButton';
 import Button from '@/components/Button';
 import '@/app/styles/homePage.css';
+import RotatePhone from '@/components/RotatePhone';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
@@ -30,38 +31,41 @@ export default function Home() {
   };
 
   return (
-    <div
-      className="home-container"
-      style={{ backgroundImage: 'url(/home-screen.webp)' }}
-    >
-      <audio id="bg-music" loop>
-        <source src="/bg-home.mp3" type="audio/mpeg" />
-        Seu navegador não suporta elementos de audio.
-      </audio>
-      <div className="home-content">
-        <div className="home-title">
-          <Image
-            src="/game-title.png"
-            width={600}
-            height={255}
-            alt="Game Title" 
-            className="responsiveLogo"
-          />
+    <>
+      <RotatePhone />
+      <div
+        className="home-container"
+        style={{ backgroundImage: 'url(/home-screen.webp)' }}
+      >
+        <audio id="bg-music" loop>
+          <source src="/bg-home.mp3" type="audio/mpeg" />
+          Seu navegador não suporta elementos de audio.
+        </audio>
+        <div className="home-content">
+          <div className="home-title">
+            <Image
+              src="/game-title.png"
+              width={600}
+              height={255}
+              alt="Game Title" 
+              className="responsiveLogo"
+            />
+          </div>
+          <div className="home-button-group">
+            <Button onClick={handleStartClassMode} label={'Iniciar Aventura'} />
+          </div>
         </div>
-        <div className="home-button-group">
-          <Button onClick={handleStartClassMode} label={'Iniciar Aventura'} />
+        
+        <div className="home-music-control">
+          {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
         </div>
-      </div>
-      
-      <div className="home-music-control">
-        {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
-      </div>
 
-      <div className="home-ranking-control">
-        <IconButton name="ranking" size={72} onClick={handleRanking} />
-      </div>
+        <div className="home-ranking-control">
+          <IconButton name="ranking" size={72} onClick={handleRanking} />
+        </div>
 
-      <InfoModal isOpen={isModalOpen} onClose={closeModal} />
-    </div>
+        <InfoModal isOpen={isModalOpen} onClose={closeModal} />
+      </div>
+    </>
   );
 }
