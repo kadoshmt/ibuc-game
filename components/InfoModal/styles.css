@@ -1,7 +1,7 @@
 /* app/styles/infoModal.css */
 
 .info-modal-overlay {
-  @apply fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50;
+  @apply fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-40;
 }
 
 .info-modal-content {
