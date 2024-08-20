@@ -36,7 +36,13 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setName(newName);
-    localStorage.setItem('playerName', newName);
+  };
+
+  const handleNameKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      localStorage.setItem('playerName', name);
+      (e.target as HTMLInputElement).blur(); // Remove o foco do campo de entrada
+    }
   };
 
   const handleNextOption = () => {
@@ -50,7 +56,6 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
     setCurrentOption(newOption);
     localStorage.setItem('playerGender', characterOptions[newOption].gender);
   };
-  
 
   return (
     <div className={`player-info-container block`}>
@@ -60,6 +65,7 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
         placeholder="Nome do Jogador"
         value={name}
         onChange={handleNameChange}
+        onKeyDown={handleNameKeyPress}
         className={`player-info-input ${rammetto.className}`}
       />
       <div className="player-info-character-container">
@@ -76,7 +82,7 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
         </div>
         <button onClick={handleNextOption} className="player-info-button">{'►'}</button>
       </div>
-      <div className='flex mx-auto'>        
+      <div className='flex mx-auto'>
       </div>
     </div>
   );
