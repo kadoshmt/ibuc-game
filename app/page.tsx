@@ -15,7 +15,23 @@ export default function Home() {
   const router = useRouter();
   const { isPlaying, toggle, playAudio } = useAudio('/bg-home.mp3', true);
 
+  // Função para solicitar o modo fullscreen
+  const requestFullscreen = () => {
+    const element = document.documentElement;
+
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if ((element as any).webkitRequestFullscreen) { // Safari
+      (element as any).webkitRequestFullscreen();
+    } else if ((element as any).mozRequestFullScreen) { // Firefox
+      (element as any).mozRequestFullScreen();
+    } else if ((element as any).msRequestFullscreen) { // IE/Edge
+      (element as any).msRequestFullscreen();
+    }
+  };
+
   const handleStartClassMode = () => {
+    requestFullscreen(); // Solicita o modo fullscreen ao iniciar a aventura
     router.push('/classMode/select');
   };
 
@@ -29,6 +45,7 @@ export default function Home() {
       playAudio(); // Toca a música quando o modal for fechado e a música estiver ativada
     }
   };
+  
 
   return (
     <>
