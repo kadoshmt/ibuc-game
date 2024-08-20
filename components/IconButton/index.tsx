@@ -20,7 +20,7 @@ const IconButton: React.FC<IconButtonProps> = ({ name, size = 84, float = 'none'
   return (
     <>       
       {(float === 'left' || float === 'right') && (
-        <div className={`fixed bottom-2 ${float}-8 flex items-center justify-center`}>
+        <div className={`fixed bottom-2 ${float}-2 flex items-center justify-center`}>
           <div
             onClick={onClick}
             onMouseEnter={handleMouseEnter}
