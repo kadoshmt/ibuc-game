@@ -1,6 +1,5 @@
 /* styles/selectPage.css */
 
-/* Aplica as classes que não têm breakpoints */
 .quiz-select-container {
   @apply flex items-center justify-center h-screen bg-cover bg-center overflow-hidden;
   background-image: url('/selection-screen.webp');
@@ -17,7 +16,6 @@
   background-image: url('/open-notebook.png');
 }
 
-/* Adiciona manualmente as media queries para evitar circularidade */
 .quiz-select-inner {
   @apply absolute inset-0 flex flex-row justify-between items-start gap-16 pl-20 pr-28 pt-16;
 }
@@ -32,7 +30,8 @@
 }
 
 .player-info-input {
-  @apply text-red-700 text-center w-full p-2 border-2 rounded-lg mt-8 mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500;
+  @apply text-red-700 text-center w-full p-2 border-2 rounded-lg mt-8 mb-4 bg-transparent border-amber-700 border-dashed outline-0;
+  @apply focus:outline-0 focus:border-dashed focus:border-amber-500;
 }
 
 .player-info-character-container {
@@ -51,9 +50,6 @@
   @apply mt-2 text-xl text-amber-900 hidden;
 }
 
-.player-info-next-button {
-  @apply block md:hidden bg-blue-500 text-white py-2 px-4 rounded-lg;
-}
 
 /* LessonSelection styles */
 .lesson-selection-container {
@@ -69,14 +65,23 @@
 }
 
 .lesson-selection-button {
-  @apply bg-amber-900 text-white py-2 px-4 rounded-lg hover:bg-amber-700 hover:shadow-amber-700 shadow transition-all;
+  @apply bg-orange-500 text-white py-2 px-4 rounded-lg shadow transition-all;
+  @apply hover:bg-yellow-500 hover:shadow-yellow-500;
+}
+
+/* Estilo para o botão desabilitado */
+.button-disabled {
+  @apply bg-amber-900 text-white;
+  @apply hover:bg-amber-900 hover:shadow-transparent;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .lesson-selection-button-container {
   @apply text-center mt-5;
 }
 
-/* Reusable Selector Styles */
+/* Selector Styles */
 .selector-container {
   @apply my-4;
 }
@@ -86,7 +91,8 @@
 }
 
 .selector-select {
-  @apply text-amber-600 text-xs w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500;
+  @apply text-amber-600 text-xs w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0;
+  @apply focus:outline-0 focus:border-dashed focus:border-amber-500;
 }
 
 .option-default {

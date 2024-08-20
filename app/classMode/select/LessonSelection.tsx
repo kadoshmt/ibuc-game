@@ -53,6 +53,9 @@ const LessonSelection: React.FC<LessonSelectionProps> = ({ onSelection, isVisibl
     }
   };
 
+  // Condição para habilitar o botão
+  const isButtonDisabled = level === null || module === null || lesson === null;
+
   return (
     <div className={`lesson-selection-container ${isVisible ? 'block' : 'hidden md:block'}`}>
       <h1 className={`lesson-selection-title ${luckiest.className}`}>Escolha a Lição</h1>
@@ -68,7 +71,8 @@ const LessonSelection: React.FC<LessonSelectionProps> = ({ onSelection, isVisibl
       <div className="lesson-selection-button-container">
         <button
           onClick={handleSelect}
-          className={`lesson-selection-button ${rammetto.className}`}
+          className={`lesson-selection-button ${rammetto.className} ${isButtonDisabled ? 'button-disabled' : ''}`}
+          disabled={isButtonDisabled}
         >
           Iniciar Expedição
         </button>
