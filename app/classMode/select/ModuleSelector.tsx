@@ -22,21 +22,21 @@ const ModuleSelector: React.FC<ModuleSelectorProps> = ({ onChange }) => {
   ];
 
   return (
-    <div>
-      <label className="block mb-2 font-bold">Selecione o Módulo:</label>
-      <select
-        className={`${rammetto.className} text-amber-600 text-xs w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500`}
-        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(parseInt(e.target.value))}
-        defaultValue=""
-      >
-        <option value="" className='bg-orange-100' disabled>Selecione um Módulo</option>
-        {modules.map((module) => (
-          <option key={module.id} value={module.id} className='bg-orange-100'>
-            {module.name}
-          </option>
-        ))}
-      </select>
-    </div>
+    <div className="selector-container">
+    <label className="selector-label">Selecione o Módulo:</label>
+    <select
+      className={`${rammetto.className} selector-select`}
+      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(parseInt(e.target.value))}
+      defaultValue=""
+    >
+      <option value="" className="option-default" disabled>Selecione um Módulo</option>
+      {modules.map((module) => (
+        <option key={module.id} value={module.id} className="option-default">
+          {module.name}
+        </option>
+      ))}
+    </select>
+  </div>
   );
 };
 

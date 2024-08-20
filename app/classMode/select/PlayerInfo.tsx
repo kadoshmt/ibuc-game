@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Rammetto_One, Luckiest_Guy } from 'next/font/google';
+import '@/app/styles/selectPage.css';
 
 const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 const luckiest = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
@@ -49,28 +50,21 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
     setCurrentOption(newOption);
     localStorage.setItem('playerGender', characterOptions[newOption].gender);
   };
-
-  const handleNext = () => {
-    if (name) {
-      localStorage.setItem('playerName', name);
-      localStorage.setItem('playerGender', characterOptions[currentOption].gender);
-      onNext(name, characterOptions[currentOption].gender);
-    }
-  };
+  
 
   return (
-    <div className={`w-full md:w-1/2 p-8 pr-14 ${isVisible ? 'block' : 'hidden md:block'}`}>
-      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1`}>Aventureiro(a)</h1>
+    <div className={`player-info-container block`}>
+      <h1 className={`player-info-title ${luckiest.className}`}>Aventureiro(a)</h1>
       <input
         type="text"
         placeholder="Nome do Jogador"
         value={name}
         onChange={handleNameChange}
-        className={`${rammetto.className} text-red-700 text-center w-full p-2 border-2 rounded-lg mt-8 mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500`}
+        className={`player-info-input ${rammetto.className}`}
       />
-      <div className="flex justify-center items-center mt-8 mb-4">
-        <button onClick={handlePrevOption} className="text-3xl text-amber-900 pr-2">{'◄'}</button>
-        <div className=" text-center">
+      <div className="player-info-character-container">
+        <button onClick={handlePrevOption} className="player-info-button pr-2">{'◄'}</button>
+        <div className="player-info-character-image">
           <Image
             src={characterOptions[currentOption].image}
             alt={characterOptions[currentOption].label}
@@ -78,17 +72,11 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
             height={341}
             className=""
           />
-          <p className={`${rammetto.className} mt-2 text-1xl text-amber-900`}>{characterOptions[currentOption].label}</p>
+          <p className={`player-info-character-label ${rammetto.className}`}>{characterOptions[currentOption].label}</p>
         </div>
-        <button onClick={handleNextOption} className="text-3xl  text-amber-900">{'►'}</button>
+        <button onClick={handleNextOption} className="player-info-button">{'►'}</button>
       </div>
-      <div className='flex mx-auto'>
-        <button
-          onClick={handleNext}
-          className="block md:hidden bg-blue-500 text-white py-2 px-4 rounded-lg"
-        >
-          Avançar
-        </button>
+      <div className='flex mx-auto'>        
       </div>
     </div>
   );

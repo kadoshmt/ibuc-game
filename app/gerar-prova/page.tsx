@@ -1,7 +1,7 @@
 "use client"
-import LevelSelector from '@/components/LevelSelector';
-import ModuleSelector from '@/components/ModuleSelector';
-import LessonSelector from '@/components/LessonSelector';
+import LevelSelector from '@/app/classMode/select/LevelSelector';
+import ModuleSelector from '@/app/classMode/select/ModuleSelector';
+import LessonSelector from '@/app/classMode/select/LessonSelector';
 import { useState } from 'react';
 
 export default function GenerateTest() {

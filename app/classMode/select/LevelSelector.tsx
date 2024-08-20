@@ -16,16 +16,16 @@ const LevelSelector: React.FC<LevelSelectorProps> = ({ onChange }) => {
   ];
 
   return (
-    <div>
-      <label className="block mb-2 font-bold">Selecione o Nível:</label>
+    <div className="selector-container">
+      <label className="selector-label">Selecione o Nível:</label>
       <select
-        className={`${rammetto.className} text-amber-600 text-xs w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500`}
+        className={`${rammetto.className} selector-select`}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(parseInt(e.target.value))}
         defaultValue=""
       >
-        <option value="" className='bg-orange-100' disabled>Selecione um Nível</option>
+        <option value="" className="option-default" disabled>Selecione um Nível</option>
         {levels.map((level) => (
-          <option key={level.id} value={level.id} className='bg-orange-100'>
+          <option key={level.id} value={level.id} className="option-default">
             {level.name}
           </option>
         ))}

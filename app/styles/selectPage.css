@@ -1,0 +1,178 @@
+/* styles/selectPage.css */
+
+/* Aplica as classes que não têm breakpoints */
+.quiz-select-container {
+  @apply flex items-center justify-center h-screen bg-cover bg-center overflow-hidden;
+  background-image: url('/selection-screen.webp');
+}
+
+.quiz-select-content {
+  @apply relative w-full h-screen;
+  max-height: 629px;
+  max-width: 1000px;
+}
+
+.notebook-background {
+  @apply absolute inset-0 bg-no-repeat bg-center bg-contain my-2;
+  background-image: url('/open-notebook.png');
+}
+
+/* Adiciona manualmente as media queries para evitar circularidade */
+.quiz-select-inner {
+  @apply absolute inset-0 flex flex-row justify-between items-start gap-16 pl-20 pr-28 pt-16;
+}
+
+/* PlayerInfo styles */
+.player-info-container {
+  @apply w-1/2 p-4 h-full;
+}
+
+.player-info-title {
+  @apply text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1;
+}
+
+.player-info-input {
+  @apply text-red-700 text-center w-full p-2 border-2 rounded-lg mt-8 mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500;
+}
+
+.player-info-character-container {
+  @apply flex justify-center items-center mt-8 mb-4;
+}
+
+.player-info-button {
+  @apply text-3xl text-amber-900;
+}
+
+.player-info-character-image {
+  @apply text-center;
+}
+
+.player-info-character-label {
+  @apply mt-2 text-xl text-amber-900 hidden;
+}
+
+.player-info-next-button {
+  @apply block md:hidden bg-blue-500 text-white py-2 px-4 rounded-lg;
+}
+
+/* LessonSelection styles */
+.lesson-selection-container {
+  @apply w-1/2 p-4 h-full;
+}
+
+.lesson-selection-title {
+  @apply text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1;
+}
+
+.lesson-selection-section {
+  @apply mb-5 mt-8;
+}
+
+.lesson-selection-button {
+  @apply bg-amber-900 text-white py-2 px-4 rounded-lg hover:bg-amber-700 hover:shadow-amber-700 shadow transition-all;
+}
+
+.lesson-selection-button-container {
+  @apply text-center mt-5;
+}
+
+/* Reusable Selector Styles */
+.selector-container {
+  @apply my-4;
+}
+
+.selector-label {
+  @apply block mb-2 font-bold;
+}
+
+.selector-select {
+  @apply text-amber-600 text-xs w-full p-2 border-2 rounded-lg mb-4 bg-transparent border-amber-700 border-dashed outline-0 focus:outline-0 focus:border-dashed focus:border-amber-500;
+}
+
+.option-default {
+  @apply bg-orange-100;
+}
+
+/* Define manualmente as classes para breakpoints */
+@media (max-width: 1021px) {
+  .quiz-select-content {
+    max-width: 650px;
+  }
+
+  .quiz-select-inner {
+    @apply gap-10 pl-10 pr-14 pt-10;
+  }
+
+  .player-info-title,
+  .lesson-selection-title {
+    @apply text-xl;
+  }
+
+  .lesson-selection-section {
+    @apply m-0 mt-2;
+  }
+
+  .player-info-input {
+    @apply text-sm;
+  }
+  .selector-container {
+    @apply m-0 mr-2;
+  }
+
+  .selector-label {
+    @apply text-sm;
+  }
+
+  .selector-select {
+    @apply p-1 mb-2 ;
+    font-size: 0.65rem;
+  }
+  .lesson-selection-button {    
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .quiz-select-content {
+    max-width: 600px;
+  }  
+
+  .player-info-container,
+  .lesson-selection-container {
+    @apply p-2;
+  }
+
+  .selector-select {
+    @apply mb-1 ;
+  }
+
+  .selector-label {
+    font-size: 0.72rem;
+  }
+
+}
+
+@media (max-width: 740px) {
+
+  .quiz-select-content {
+    max-width: 550px;
+  }
+  
+  .player-info-container{
+    @apply p-2 pl-1;
+  }
+  
+  .lesson-selection-container {
+    @apply p-2 pr-0;
+  }
+
+  .selector-select {
+    @apply mb-0 ;
+  } 
+
+  .selector-label {
+    @apply mb-1 ;
+  }
+
+}

@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import LevelSelector from '@/components/LevelSelector';
-import ModuleSelector from '@/components/ModuleSelector';
-import LessonSelector from '@/components/LessonSelector';
+import LevelSelector from '@/app/classMode/select/LevelSelector';
+import ModuleSelector from '@/app/classMode/select/ModuleSelector';
+import LessonSelector from '@/app/classMode/select/LessonSelector';
 import { Rammetto_One, Luckiest_Guy } from 'next/font/google';
+import '@/app/styles/selectPage.css';
 
 const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 const luckiest = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
@@ -53,21 +54,21 @@ const LessonSelection: React.FC<LessonSelectionProps> = ({ onSelection, isVisibl
   };
 
   return (
-    <div className={`w-full md:w-1/2 p-8 pr-16 ${isVisible ? 'block' : 'hidden md:block'}`}>
-      <h1 className={`${luckiest.className} text-3xl text-amber-900 font-bold text-center shadow-inner rounded-lg p-1`}>Escolha a Lição</h1>
-      <div className="mb-5 mt-8">
+    <div className={`lesson-selection-container ${isVisible ? 'block' : 'hidden md:block'}`}>
+      <h1 className={`lesson-selection-title ${luckiest.className}`}>Escolha a Lição</h1>
+      <div className="lesson-selection-section">
         <LevelSelector onChange={setLevel} />
       </div>
-      <div className="mb-5">
+      <div className="lesson-selection-section">
         <ModuleSelector onChange={handleModuleChange} />
       </div>
-      <div className="mb-5">
+      <div className="lesson-selection-section">
         <LessonSelector onChange={setLesson} lessons={filteredLessons} />
       </div>
-      <div className='text-center mt-5'>
+      <div className="lesson-selection-button-container">
         <button
           onClick={handleSelect}
-          className={`${rammetto.className} bg-amber-900 text-white py-2 px-4 rounded-lg hover:bg-amber-700 hover:shadow-amber-700 shadow transition-all`}
+          className={`lesson-selection-button ${rammetto.className}`}
         >
           Iniciar Expedição
         </button>
