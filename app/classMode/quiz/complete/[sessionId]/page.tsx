@@ -159,7 +159,7 @@ export default function QuizComplete() {
             <div className="quiz-complete-buttons">
               <IconButton name="try-again" size={72} onClick={() => router.push('/classMode/select')} />
               <IconButton name="home" size={72} onClick={() => router.push('/')} />
-              <IconButton name="ranking" size={72} onClick={() => router.push('/classMode/ranking')} />
+              <IconButton name="ranking" size={72} onClick={() => router.push('/ranking')} />
             </div>
 
           </div>
