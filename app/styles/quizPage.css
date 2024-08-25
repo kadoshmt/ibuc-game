@@ -127,7 +127,9 @@
   }
 
   .quiz-answer-list {
-    @apply mt-2 text-sm py-2;
+    @apply mt-2 py-2;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .quiz-answer-list li{
@@ -140,7 +142,7 @@
   }
 
   .quiz-explanation {
-    @apply text-sm p-1 mb-0;
+    @apply hidden text-sm p-1 mb-0;
   }
 
   .quiz-next-button {
@@ -165,7 +167,8 @@
   }
 
   .quiz-sidebar-player-name {
-    @apply flex bg-orange-700 text-white text-sm p-0 px-3 rounded-full;
+    @apply flex bg-orange-700 text-white text-center text-sm p-0 px-3 py-1 rounded-full;
+    font-size: 0.8rem;
   }
 
   .quiz-sidebar-score-time-container {
@@ -200,11 +203,14 @@
   .quiz-question {
     @apply text-lg pt-5 px-8;
     font-size: 1rem;
-    line-height: 1rem;      
+    line-height: 1rem;   
+    text-shadow: 1px 1px  #ECCC8C;  
   }
 
   .quiz-answer-list {
-    @apply  text-sm py-0;
+    @apply  text-sm py-2;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 
   .quiz-answer-list li{
@@ -258,13 +264,11 @@
 
 
 .quiz-sidebar-card {
-  @apply rounded-xl  flex flex-col justify-between items-center p-4 shadow-xl;
-  position: relative;
+  @apply relative rounded-xl  flex flex-col justify-between items-center p-2 shadow-xl;  
   width: 80%;
   min-height: 250px;
-  color: #333;
-  background: transparent;
-  background-color: #ECCC8C;
+  color: #333; 
+  background: radial-gradient(circle, rgba(244,220,172,1) 0%, rgba(236,196,116,1) 100%);
   overflow: hidden;
   /* border-top: 1px solid rgba(255, 49, 49, 0.5);
   border-right: 1px solid rgba(0, 255, 255, 0.5);
@@ -274,10 +278,7 @@
   /* padding: 1rem; */
 }
 
-.quiz-sidebar-card p {
-  font-size: 0.95rem;
-  text-align: center;
-}
+
 
 .quiz-sidebar-card span {
   position: absolute;
