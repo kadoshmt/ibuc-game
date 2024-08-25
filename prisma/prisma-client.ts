@@ -17,28 +17,26 @@ const client = new Client({
 
 client.connect();
 
-let prisma: PrismaClient;
-
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient({
+// Função para instanciar o Prisma Client
+const prismaClientSingleton = () => {
+  return new PrismaClient({
     datasources: {
       db: {
-        // Não especifica ssl aqui, pois Prisma não suporta essa configuração
         url: process.env.DATABASE_URL,
       },
     },
   });
-} else {
-  if (!(global as any).prisma) {
-    (global as any).prisma = new PrismaClient({
-      datasources: {
-        db: {
-          url: process.env.DATABASE_URL,
-        },
-      },
-    });
-  }
-  prisma = (global as any).prisma;
-}
+};
+
+// Declaração global para armazenar a instância do Prisma Client
+declare const globalThis: {
+  prismaGlobal: PrismaClient;
+} & typeof global;
+
+// Cria uma nova instância do Prisma Client ou reutiliza a existente
+const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
+
+// Armazena a instância no globalThis apenas em ambiente de desenvolvimento
+if (process.env.NODE_ENV !== 'production') globalThis.prismaGlobal = prisma;
 
 export default prisma;
