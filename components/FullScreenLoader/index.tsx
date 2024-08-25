@@ -10,7 +10,7 @@ const rammetto = Rammetto_One({ subsets: ["latin"], weight: "400" });
 const FullScreenLoader = () => {
   return (
     <div className={`${rammetto.className} fixed inset-0 flex items-center justify-center z-50 bg-gradient`}>
-      <div className="flex flex-col items-center">
+      <div className="lottie-container flex flex-col items-center">
         <Lottie 
           animationData={animationData} 
           loop={true} 
@@ -27,6 +27,10 @@ const FullScreenLoader = () => {
           animation: gradient 15s ease infinite;
         }
 
+        .lottie-container > p {
+           text-shadow: 2px 2px  #ee7752;           
+         }
+
         @keyframes gradient {
           0% {
             background-position: 0% 50%;
@@ -36,6 +40,20 @@ const FullScreenLoader = () => {
           }
           100% {
             background-position: 0% 50%;
+          }
+        }
+          
+       /* Ajustes para telas menores */
+        @media (max-width: 1204px) {
+          .lottie-container svg {
+            height: 150px;
+            width: 150px;
+          }
+
+          .lottie-container > p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px  #ee7752;
+            margin-top: 0rem;
           }
         }
       `}</style>
