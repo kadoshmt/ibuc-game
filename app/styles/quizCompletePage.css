@@ -1,0 +1,144 @@
+/* styles/quizCompletePage.css */
+
+/* Container principal */
+.quiz-complete-container {
+  @apply flex items-center justify-center h-screen overflow-hidden;
+}
+
+/* Container do conteúdo principal*/
+.quiz-complete-content {
+  @apply relative bg-no-repeat bg-center;
+  background-image: url('/board-win.png'); /* Este estilo será atualizado dinamicamente no componente */
+  min-height: 635px;
+  max-width: 720px;
+}
+
+/* Caixa de resultado */
+.quiz-complete-box {
+  @apply px-36 py-16 ;  
+}
+
+/* conteúdo da Caixa de resultado */
+.quiz-complete-box-content {
+  @apply text-amber-800 flex flex-col content-between mt-20;  
+}
+
+
+/* Estrelas */
+.quiz-complete-stars {
+  @apply flex justify-between mb-4 px-6;
+}
+
+/* Avatar */
+
+.quiz-complete-avatar-container {
+  @apply flex justify-center mb-2;  
+}
+
+.quiz-complete-avatar {
+  @apply flex items-center justify-center rounded-full shadow-lg border-4 border-orange-700 w-[100px] h-[100px];
+}
+
+
+
+/* Mensagens */
+.quiz-complete-message {
+  @apply text-center text-2xl text-orange-700;
+}
+
+.quiz-complete-message-2nd-line {
+  @apply text-center mb-4;
+}
+
+
+
+.quiz-complete-summary {
+  @apply text-center shadow shadow-orange-400 bg-orange-100 bg-opacity-50 py-2 rounded-full mb-4;
+}
+
+.quiz-complete-rank {
+  @apply text-center shadow shadow-orange-400 bg-orange-100 bg-opacity-50 py-2 rounded-full mb-4;
+}
+
+.quiz-complete-buttons {
+  @apply flex justify-between mx-6;
+}
+
+
+
+/* Define manualmente as classes para breakpoints */
+@media (max-width: 1021px) {
+  .quiz-complete-container { @apply mt-2; }
+
+  .quiz-complete-content { @apply bg-contain; min-height: 90%; max-width: 520px; }
+
+  .quiz-complete-box { @apply px-32 pr-36 py-2; }    
+  
+  .quiz-complete-stars { @apply mb-4 px-7; }
+
+  .quiz-complete-stars img { @apply w-14 h-14; }
+  
+  .quiz-complete-avatar { @apply border-4  w-20 h-20; }
+  
+  .quiz-complete-message {  @apply text-lg; }
+
+  .quiz-complete-message-2nd-line { @apply hidden text-sm mb-1; }
+  
+  .quiz-complete-summary {  @apply text-center py-0 mb-2 text-sm; }
+
+  .quiz-complete-summary span{ @apply text-lg; }
+  
+  .quiz-complete-rank { @apply  py-0  mb-4 text-sm; }
+
+  .quiz-complete-rank span{ @apply text-lg; }
+  
+  .quiz-complete-buttons {  @apply gap-3; }
+
+  .quiz-complete-buttons img {  @apply w-12 h-12; }
+}
+
+@media (max-width: 896px) {
+  .quiz-complete-container { @apply py-0; }
+
+  .quiz-complete-content { max-height: 95%; }
+
+  .quiz-complete-box-content{ @apply px-3; margin-top: 4.2rem }
+
+  .quiz-complete-stars { @apply  mb-2 px-4; }
+
+  .quiz-complete-stars img { @apply w-12 h-12; }
+
+  .quiz-complete-avatar {  @apply border-2  w-16 h-16; }
+
+  .quiz-complete-message { font-size: 1rem; line-height: 1.75rem ; }
+
+  .quiz-complete-summary { @apply  mb-2; font-size: 0.75rem; }
+
+  .quiz-complete-summary span { font-size: 0.9rem; }
+}
+
+@media (max-width: 844px) {
+  .quiz-complete-container { @apply py-0; }
+
+  .quiz-complete-content { @apply bg-contain; max-height: 96%; max-width: 340px; }
+ 
+  .quiz-complete-box-content{ @apply px-4 pr-5; margin-top: 4.6rem }
+
+  .quiz-complete-box { @apply px-10 pr-11 py-0; }
+
+  .quiz-complete-stars { @apply  mb-2 px-8; } 
+
+  
+  .quiz-complete-rank { @apply  py-0  mb-3; font-size: 0.75rem;}
+
+  .quiz-complete-rank span{ font-size: 0.9rem; }
+
+  
+}
+
+@media (max-width: 680px) {
+
+  .quiz-complete-buttons {  @apply mx-8 gap-2; }
+
+  .quiz-complete-buttons img {  @apply w-10 h-10; }
+}

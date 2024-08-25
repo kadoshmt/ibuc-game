@@ -8,6 +8,8 @@ import useAudio from '@/hooks/useAudio';
 import Image from 'next/image';
 import { Luckiest_Guy } from 'next/font/google';
 import IconButton from '@/components/IconButton'; // Importe o novo componente de botão
+import '@/app/styles/quizCompletePage.css'; // Importa o arquivo CSS
+import RotatePhone from '@/components/RotatePhone';
 
 const luckiest = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
 
@@ -63,12 +65,12 @@ export default function QuizComplete() {
         setAudioUrl('/bg-victory.mp3');
       }
     };
-
+/*
     const deleteSession = async () => {
       await fetch(`/api/session?id=${sessionId}`, {
         method: 'DELETE',
       });
-    };
+    };*/
 
     const fetchSession = async () => {
       const response = await fetch(`/api/session?id=${sessionId}`);
@@ -83,7 +85,7 @@ export default function QuizComplete() {
           determineBackgroundAndAudio(data.score);
 
           if (!savedRef.current) {
-            await fetch('/api/save-results', {
+           /* await fetch('/api/save-results', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -93,7 +95,7 @@ export default function QuizComplete() {
                 totalScore: data.score,
                 mode: 'default',
               }),
-            });
+            });*/
           
             savedRef.current = true;
           }
@@ -102,7 +104,7 @@ export default function QuizComplete() {
           const ranking = await rankingResponse.json();
           setMyRank(ranking.playerPosition);
 
-          await deleteSession(); // Apaga a sessão após salvar o resultado e pegar o ranking
+          //await deleteSession(); // Apaga a sessão após salvar o resultado e pegar o ranking
 
           setLoading(false);
         } else {
@@ -122,58 +124,50 @@ export default function QuizComplete() {
 
   return (
     <>
+      <RotatePhone />
       <Confetti />
-      <div className="flex items-center justify-center h-screen">
+      <div className="quiz-complete-container">
         <div
-          className={`${luckiest.className} relative w-[635px] h-[700px] px-32 py-16 text-amber-800`}
+          className={`quiz-complete-content ${luckiest.className}`}
           style={{ backgroundImage: `url(${background})` }}
         >
-          <div className='flex flex-col content-between mt-20'>
+          <div className="quiz-complete-box">
+          <div className="quiz-complete-box-content">
             {/* Estrelas */}
-            <div className="flex justify-between  mb-4 px-6">
+            <div className="quiz-complete-stars">
               {stars.map((star, index) => (
                 <Image key={index} src={star} alt={`Star ${index + 1}`} width={100} height={100} />
               ))}
             </div>
 
             {/* Info */}
-            <div className="flex justify-center mb-2">
-              <div className={`flex items-center justify-center rounded-full shadow-lg ${avatarBgColor} border-4 border-orange-700 w-[100px] h-[100px]`}>
+            <div className="quiz-complete-avatar-container">
+              <div className={`quiz-complete-avatar ${avatarBgColor}`}>
                 <Image src={avatarSrc} alt="Avatar" width={100} height={100} className="rounded-full" />
               </div>
             </div>
-            <p className="text-center text-2xl text-orange-700">Parabéns, {playerName}!</p>
-            <p className="text-center mb-4">Você completou mais uma lição.</p>
-            <p className="text-center shadow shadow-orange-400 bg-orange-100 bg-opacity-50 py-2 rounded-full mb-4">Você fez <span className='text-[#7cb342] text-2xl'>{score} pts</span> &nbsp;em&nbsp; <span className='text-[#7cb342] text-2xl'>{time !== null ? (
+            <p className="quiz-complete-message">Parabéns, {playerName}!</p>
+            <p className="quiz-complete-message-2nd-line">Você completou mais uma lição.</p>
+            <p className="quiz-complete-summary">Você fez <span className='text-[#7cb342] text-2xl'>{score} pts</span> &nbsp;em&nbsp; <span className='text-[#7cb342] text-2xl'>{time !== null ? (
                 <>{formatTime(time)}</>
               ) : (
                 <span className='text-amber-600'>Carregando tempo...</span>
               )}</span> min</p>
-            <p className="text-center shadow shadow-orange-400 bg-orange-100 bg-opacity-50 py-2 rounded-full mb-4">Você ficou em <span className='text-amber-500 text-2xl'>{myRank}º lugar</span></p>
+            <p className="quiz-complete-rank">Você ficou em <span className='text-amber-500 text-2xl'>{myRank}º lugar</span></p>
 
-            {/* Botão Home */}
-            <div className='flex justify-between mx-10'>
+            {/* Botões */}
+            <div className="quiz-complete-buttons">
               <IconButton name="try-again" size={72} onClick={() => router.push('/classMode/select')} />
               <IconButton name="home" size={72} onClick={() => router.push('/')} />
               <IconButton name="ranking" size={72} onClick={() => router.push('/classMode/ranking')} />
             </div>
 
           </div>
-        </div>        
-        
-        {/* {isPlaying !== null && (
-          <button
-            onClick={toggle}
-            className="fixed bottom-8 left-8 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center border-4 border-white text-3xl"
-          >
-            {isPlaying ? '🔊' : '🔇'}
-          </button>
-        )} */}
-
-        {isPlaying !== null && (
-          <div className="fixed bottom-8 left-8 flex items-center justify-center">
-            {isPlaying ? <IconButton name="music-on" size={72} onClick={toggle} /> : <IconButton name="music-off" size={72} onClick={toggle} />}
           </div>
+        </div>          
+        
+        {isPlaying !== null && (
+                <IconButton name={`${isPlaying ? "music-on": "music-off"}`} size={72} onClick={toggle} float='left' />
         )}
       </div>
     </>
