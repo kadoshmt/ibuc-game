@@ -35,11 +35,12 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({ onNext, isVisible }) => {
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
+    localStorage.setItem('playerName', newName);
     setName(newName);
   };
 
   const handleNameKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter') {     
       localStorage.setItem('playerName', name);
       (e.target as HTMLInputElement).blur(); // Remove o foco do campo de entrada
     }
