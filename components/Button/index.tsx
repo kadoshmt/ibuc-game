@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ name = "default", width = 200, height =
   const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <div
+    <a
     onClick={onClick}
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({ name = "default", width = 200, height =
     }}
   >
     <span>{label}</span>
-  </div>
+  </a>
   );
 };
 
