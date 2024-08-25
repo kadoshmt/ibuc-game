@@ -65,12 +65,12 @@ export default function QuizComplete() {
         setAudioUrl('/bg-victory.mp3');
       }
     };
-/*
+
     const deleteSession = async () => {
       await fetch(`/api/session?id=${sessionId}`, {
         method: 'DELETE',
       });
-    };*/
+    };
 
     const fetchSession = async () => {
       const response = await fetch(`/api/session?id=${sessionId}`);
@@ -85,7 +85,7 @@ export default function QuizComplete() {
           determineBackgroundAndAudio(data.score);
 
           if (!savedRef.current) {
-           /* await fetch('/api/save-results', {
+            await fetch('/api/save-results', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -95,7 +95,7 @@ export default function QuizComplete() {
                 totalScore: data.score,
                 mode: 'default',
               }),
-            });*/
+            });
           
             savedRef.current = true;
           }
@@ -104,7 +104,7 @@ export default function QuizComplete() {
           const ranking = await rankingResponse.json();
           setMyRank(ranking.playerPosition);
 
-          //await deleteSession(); // Apaga a sessão após salvar o resultado e pegar o ranking
+          await deleteSession(); // Apaga a sessão após salvar o resultado e pegar o ranking
 
           setLoading(false);
         } else {
