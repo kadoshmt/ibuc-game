@@ -1,0 +1,154 @@
+/* styles/rankingPage.css */
+
+/* Container principal */
+.ranking-page-container {
+  @apply text-orange-700 flex items-center justify-center h-screen overflow-hidden;
+  background-image: url('/bg-complete.png');
+}
+
+/* Conteúdo do ranking */
+.ranking-content-wrapper {
+  @apply relative bg-no-repeat bg-center overflow-hidden;
+  background-image: url('/board-ranking.png');
+  min-height: 679px;
+  min-width: 900px;
+}
+
+.ranking-content {
+  @apply rounded-lg p-8;
+ 
+}
+
+/* Tabela de rankings */
+.ranking-table-container {
+  @apply mt-32 px-6;
+}
+
+.ranking-table-wrapper {
+  @apply overflow-y-auto px-2; max-height: 440px;
+}
+
+.ranking-table {
+  @apply min-w-full;
+}
+
+.ranking-table-row {
+  @apply text-center bg-amber-700;
+}
+
+.ranking-table-row-odd {
+  @apply bg-opacity-5;
+}
+
+.ranking-table-row-even {
+  @apply bg-opacity-0;
+}
+
+/* Colunas da tabela */
+.ranking-table-cell-icon {
+  @apply pl-4;
+}
+
+.ranking-table-cell-rank {
+  @apply py-2 text-3xl;
+}
+
+.ranking-table-cell-avatar {
+  @apply py-2;
+}
+
+.ranking-table-cell-avatar-inner {
+  @apply flex items-center gap-3;
+}
+
+.ranking-table-avatar {
+  @apply rounded-full shadow-lg border-4 border-orange-700 w-12 h-12;
+}
+
+.ranking-table-cell-name {
+  @apply text-xl;
+}
+
+.ranking-table-cell-score {
+  @apply py-2 text-2xl;
+}
+
+.ranking-table-cell-score-inner {
+  @apply flex items-center gap-1;
+}
+
+.ranking-table-cell-score-text {
+  @apply text-xl;
+}
+
+.ranking-table-cell-time {
+  @apply py-2;
+}
+
+.ranking-table-cell-time-inner {
+  @apply flex items-center gap-1;
+}
+
+.ranking-table-cell-time-text {
+  @apply text-xl;
+}
+
+/* Botão Home */
+.home-button-container {
+  @apply fixed bottom-8 right-8 flex items-center justify-center;
+}
+
+/* Rótulo de ranking vazio */
+.ranking-empty-label {
+  @apply text-center;
+}
+
+@media (max-width: 1021px) {
+  .ranking-page-container { @apply bg-contain; }
+
+  .ranking-content-wrapper { @apply bg-contain; min-height: 96%; min-width: 550px; }
+
+  .ranking-content { @apply p-4; }
+
+  .ranking-table-container { @apply mt-20 px-4; }
+  
+  .ranking-table-wrapper { @apply px-2; max-height: 240px; }    
+  
+  .ranking-table-cell-icon { @apply pl-1; }
+  
+  .ranking-table-cell-rank { @apply py-2 text-2xl; }
+  
+  .ranking-table-cell-avatar { @apply py-1; }
+  
+  .ranking-table-cell-avatar-inner { @apply gap-2; }
+  
+  .ranking-table-avatar { @apply border-2 w-10 h-10; }
+  
+  .ranking-table-cell-name, .ranking-table-cell-score-text, .ranking-table-cell-time-text { @apply text-sm; }      
+}
+
+@media (max-width: 896px) {
+  .ranking-content-wrapper { @apply bg-contain; min-height: 96%; min-width: 440px; }
+
+  .ranking-content { @apply p-4; }
+
+  .ranking-table-container { @apply mt-20 px-4; }
+  
+  .ranking-table-wrapper { @apply px-2; max-height: 240px; max-width: 98%; }    
+  
+  .ranking-table-cell-icon { @apply pl-0; }
+  
+  .ranking-table-cell-rank { @apply py-2 text-xl; }
+  
+  .ranking-table-cell-name  { @apply text-left text-sm break-words; }       
+}
+
+@media (max-width: 844px) {
+  .ranking-table-container { @apply mt-16 px-4; }  }
+
+
+
+@media (max-width: 680px) {
+  .ranking-table-container { @apply px-6; }
+}
+

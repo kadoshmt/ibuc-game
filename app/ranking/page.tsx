@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Luckiest_Guy } from 'next/font/google';
+import RotatePhone from '@/components/RotatePhone';
+import '@/app/styles/rankingPage.css';
 
 const luckiest = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
 
@@ -92,59 +94,54 @@ export default function RankingPage() {
   
 
   return (
-    <div className={`${luckiest.className} text-orange-700 flex items-center justify-center h-screen`} style={{ backgroundImage: `url(${background})` }}>
-      <div className="relative w-[900px] h-[676px]  rounded-lg p-8 overflow-hidden" style={{ backgroundImage: `url(${board})` }} >
-        <h1 className="text-2xl font-bold mb-4 hidden">Ranking</h1>
-        <div className='mt-32 px-6'>
-        
-        {rankings.length > 0 ? (
-          
-          <div className="max-h-[440px] overflow-y-auto px-2"> 
-            <table className="min-w-full">
-             
-              <tbody>
-                {rankings.map((ranking, index) => (
-                  
-                  <tr key={ranking.id} className={`text-center bg-amber-700 ${index % 2 === 0 ? ' bg-opacity-5' : 'bg-opacity-0'}`}>
-                    <td className="pl-4">{getPositionIcon(index + 1)}</td>
-                    <td className="py-2 text-3xl">{index + 1}º</td>
-                    <td className="py-2  ">
-                      <div className='flex items-center gap-3'>
-                        <div className={`rounded-full shadow-lg ${determineAvatarDetails(ranking.genre).bgColor} border-4 border-orange-700 w-[48px] h-[48px]`}>
-                          <Image src={determineAvatarDetails(ranking.genre).src} alt="Avatar" width={44} height={44} className="rounded-full" />                      
-                        </div>
-                        <div className='text-xl '>{ranking.playerName}</div>    
-                      </div>                    
-                    </td>
-                    <td className="py-2 text-2xl">  
-                      <div className='flex items-center gap-1'>                    
-                        <Image src="/coin-star.png" alt="Pontos" width={32} height={32} className="rounded-full" />                      
-                        <div className='text-xl'>{ranking.totalScore}</div> 
-                      </div>     
-                    </td>
-                    <td className="py-2">
-                      <div className='flex items-center gap-1'>                    
-                        <Image src="/clock.png" alt="Pontos" width={32} height={32} className="rounded-full" />                      
-                        <div className='text-xl'>{formatTime(ranking.totalTime)}</div> 
-                      </div>     
-                    </td>
-                    {/*<td className="py-2">
-                    {ranking.media}   
-                    </td>*/}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+    <>
+      <RotatePhone />
+      <div className={`ranking-page-container ${luckiest.className}`}>
+        <div className="ranking-content-wrapper">
+          <div className="ranking-content">
+            <h1 className="hidden">Ranking</h1>
+            <div className="ranking-table-container">
+              {rankings && rankings.length > 0 ? (
+                <div className="ranking-table-wrapper"> 
+                  <table className="ranking-table">
+                    <tbody>
+                      {rankings.map((ranking, index) => (
+                        <tr key={ranking.id} className={`ranking-table-row ${index % 2 === 0 ? 'ranking-table-row-odd' : 'ranking-table-row-even'}`}>
+                          <td className="ranking-table-cell-icon">{getPositionIcon(index + 1)}</td>
+                          <td className="ranking-table-cell-rank">{index + 1}º</td>
+                          <td className="ranking-table-cell-avatar">
+                            <div className="ranking-table-cell-avatar-inner">
+                              <div className={`ranking-table-avatar ${determineAvatarDetails(ranking.genre).bgColor}`}>
+                                <Image src={determineAvatarDetails(ranking.genre).src} alt="Avatar" width={44} height={44} className="rounded-full" />
+                              </div>
+                              <div className="ranking-table-cell-name">{ranking.playerName}</div>
+                            </div>
+                          </td>
+                          <td className="ranking-table-cell-score">
+                            <div className="ranking-table-cell-score-inner">
+                              <Image src="/coin-star.png" alt="Pontos" width={32} height={32} className="rounded-full" />
+                              <div className="ranking-table-cell-score-text">{ranking.totalScore}</div>
+                            </div>
+                          </td>
+                          <td className="ranking-table-cell-time">
+                            <div className="ranking-table-cell-time-inner">
+                              <Image src="/clock.png" alt="Tempo" width={32} height={32} className="rounded-full" />
+                              <div className="ranking-table-cell-time-text">{formatTime(ranking.totalTime)}</div>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="ranking-empty-label">Nenhum ranking disponível no momento.</div>
+              )}
+            </div>
           </div>
-        ) : (
-          <div className="text-center">Nenhum ranking disponível no momento.</div>
-        )}
         </div>
-       
+          <IconButton name="home" size={72} onClick={handleHome} float='right' />
       </div>
-      <div className="fixed bottom-8 right-8 flex items-center justify-center">
-        <IconButton name="home" size={72} onClick={handleHome} />
-      </div>
-    </div>
+    </>
   );
 }
