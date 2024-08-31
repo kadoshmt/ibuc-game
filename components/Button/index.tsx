@@ -8,40 +8,42 @@ interface ButtonProps {
   height?: number; // Tamanho (altura) do botão
   onClick: () => void; // Método a ser chamado ao clicar no botão
   label: string; // Texto a ser exibido no botão
-  fontSize?: string
+  fontSize?: string; // Tamanho da fonte
 }
 
-const Button: React.FC<ButtonProps> = ({ name = "default", width = 200, height = 59, onClick, label, fontSize="1.3rem" }) => {
+const Button: React.FC<ButtonProps> = ({ name = "default", width = 200, height = 59, onClick, label, fontSize = "1.3rem" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <a
-    onClick={onClick}
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-    style={{
-      width,
-      height,
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingBottom: '6px',
-      backgroundImage: `url(${isHovered ? `/btn-${name}-hover.png` : `/btn-${name}.png`})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      color: `${isHovered ? `#FFFFFF` : `#FFFCD4`}`, // ou qualquer outra cor que preferir
-      fontSize: `${fontSize}`, // ajuste conforme necessário
-      fontWeight: 'bold', // ajuste conforme necessário
-      textAlign: 'center',
-      textShadow: '0px 0px 3px orange'
-    }}
-  >
-    <span>{label}</span>
-  </a>
+    <button
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        width,
+        height,
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: '6px',
+        backgroundImage: `url(${isHovered ? `/btn-${name}-hover.png` : `/btn-${name}.png`})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: `${isHovered ? `#FFFFFF` : `#FFFCD4`}`, // Cor do texto
+        fontSize: `${fontSize}`, // Tamanho da fonte
+        fontWeight: 'bold', // Negrito no texto
+        textAlign: 'center',
+        textShadow: '0px 0px 3px orange',
+        border: 'none', // Remove a borda padrão do botão
+        outline: 'none', // Remove o outline padrão ao focar
+      }}
+    >
+      {label}
+    </button>
   );
 };
 
