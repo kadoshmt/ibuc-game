@@ -9,11 +9,13 @@ import IconButton from '@/components/IconButton';
 import Button from '@/components/Button';
 import '@/app/styles/homePage.css';
 import RotatePhone from '@/components/RotatePhone';
+import FullScreenLoader from '@/components/FullScreenLoader';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(true); // Controla a visibilidade do modal
   const router = useRouter();
   const { isPlaying, toggle, playAudio } = useAudio('/bg-home.mp3', true);
+  const [loading, setLoading] = useState(false);
 
   // Função para solicitar o modo fullscreen
   const requestFullscreen = () => {
@@ -30,8 +32,8 @@ export default function Home() {
     }
   };
 
-  const handleStartClassMode = () => {
-    requestFullscreen(); // Solicita o modo fullscreen ao iniciar a aventura
+  const handleStartClassMode = () => {    
+    setLoading(true);
     router.push('/classMode/select');
   };
 
@@ -40,11 +42,14 @@ export default function Home() {
   };
 
   const closeModal = () => {
+    requestFullscreen(); // Solicita o modo fullscreen ao iniciar a aventura
     setIsModalOpen(false);
     if (isPlaying) {
       playAudio(); // Toca a música quando o modal for fechado e a música estiver ativada
     }
   };
+
+  if (loading) return <FullScreenLoader />;
   
 
   return (
