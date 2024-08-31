@@ -27,6 +27,7 @@ export default function Quiz() {
   const [explanation, setExplanation] = useState('');
   const [startTime, setStartTime] = useState<number>(0);
   const [elapsedTime, setElapsedTime] = useState<number | null>(null);
+  const [isTimerFrozen, setIsTimerFrozen] = useState(false);
   const [flashIndex, setFlashIndex] = useState<number | null>(null);
   const [playerName, setPlayerName] = useState<string>('');
   const [playerGender, setPlayerGender] = useState<string>('');
@@ -78,14 +79,20 @@ export default function Quiz() {
   }, [sessionId, router]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (startTime) {
+    let timer: NodeJS.Timeout | null = null; // Inicializa como null
+  
+    if (startTime && !isTimerFrozen) {
+      timer = setInterval(() => {
         setElapsedTime(Date.now() - startTime);
+      }, 1000);
+    }
+  
+    return () => {
+      if (timer) {
+        clearInterval(timer);
       }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [startTime]);
+    };
+  }, [startTime, isTimerFrozen]);
 
   useEffect(() => {
     if (!loading && startTime === 0) {
@@ -121,16 +128,9 @@ export default function Quiz() {
     }
   };
 
-  const handleNextQuestion = async () => {
+  const handleNextQuestion = () => {
     if (questionIndex + 1 >= questions.length) {
-      const endTime = Date.now();
-      const totalTime = (endTime - startTime) / 1000; // Calcula o tempo total em segundos
-      await fetch(`/api/session?id=${sessionId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ score, time: totalTime }),
-      });
-      router.push(`/classMode/quiz/complete/${sessionId}`);
+      setIsTimerFrozen(true); // Congela o timer quando a última pergunta é respondida
     } else {
       setSelectedAnswer(null);
       setShowFeedback(false);
@@ -152,10 +152,24 @@ export default function Quiz() {
     }
   };
 
-  const handleSelect = async () => {
-    await deleteSession();
-    router.push('/classMode/select');
+  const handleFinishQuiz = async () => {
+    setLoading(true); // Exibe o loader enquanto salva as informações
+    const totalTime = elapsedTime! / 1000; // Usa o tempo final decorrido
+  
+    try {
+      await fetch(`/api/session?id=${sessionId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ score, time: totalTime }),
+      });
+      router.push(`/classMode/quiz/complete/${sessionId}`);
+    } catch (error) {
+      console.error('Error finishing quiz:', error);
+      setLoading(false);
+    }
   };
+  
+
   const handleAnswerSelect = (index: number) => {
     setSelectedAnswer(index);
     const answer = questions[questionIndex].answers[index];
@@ -175,6 +189,12 @@ export default function Quiz() {
     setTimeout(() => {
       setFlashIndex(null);
     }, 1500);
+  };
+
+  const handleSelect = async () => {
+    setLoading(true);
+    await deleteSession();
+    router.push('/classMode/select');
   };
 
   if (loading) {
@@ -235,7 +255,7 @@ export default function Quiz() {
                 {showFeedback && (
                   <div className="text-center">
                     <button
-                      onClick={handleNextQuestion}
+                      onClick={questionIndex + 1 >= questions.length ? handleFinishQuiz : handleNextQuestion}
                       className={`quiz-next-button ${rammetto.className}`}
                     >
                       {questionIndex + 1 >= questions.length ? 'Finalizar Quiz' : 'Próxima Pergunta'}
