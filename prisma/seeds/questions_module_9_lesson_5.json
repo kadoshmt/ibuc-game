@@ -1,0 +1,408 @@
+[
+  {
+    "question": "O que significa ter o fruto do Espírito em nossa vida?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Ter muitas frutas em casa.", "isCorrect": false, "explanation": "Não, o fruto do Espírito é sobre qualidades boas que Deus nos dá." },
+      { "text": "Ser cheio de qualidades boas como amor e alegria.", "isCorrect": true, "explanation": "" },
+      { "text": "Comer frutas todos os dias.", "isCorrect": false, "explanation": "Comer frutas é saudável, mas o fruto do Espírito é diferente." },
+      { "text": "Plantar árvores no quintal.", "isCorrect": false, "explanation": "Plantar é bom, mas não é sobre isso que estamos falando." }
+    ]
+  },
+  {
+    "question": "Qual dessas é uma parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Amor.", "isCorrect": true, "explanation": "" },
+      { "text": "Mentira.", "isCorrect": false, "explanation": "A mentira não faz parte do fruto do Espírito." },
+      { "text": "Preguiça.", "isCorrect": false, "explanation": "A preguiça não é uma característica do fruto do Espírito." },
+      { "text": "Raiva.", "isCorrect": false, "explanation": "A raiva não é uma qualidade do fruto do Espírito." }
+    ]
+  },
+  {
+    "question": "O que significa ter alegria, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Ficar feliz só quando ganha presentes.", "isCorrect": false, "explanation": "Alegria do Espírito é algo mais especial e constante." },
+      { "text": "Ter dinheiro para comprar o que quiser.", "isCorrect": false, "explanation": "A alegria do Espírito não depende de ter coisas." },
+      { "text": "Ser feliz mesmo quando as coisas não vão bem.", "isCorrect": true, "explanation": "" },
+      { "text": "Rir de todas as piadas.", "isCorrect": false, "explanation": "Alegria é mais do que apenas rir." }
+    ]
+  },
+  {
+    "question": "Qual dessas qualidades NÃO faz parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Paciência.", "isCorrect": false, "explanation": "" },
+      { "text": "Fidelidade.", "isCorrect": false, "explanation": "" },
+      { "text": "Brigar com os amigos.", "isCorrect": true, "explanation": "" },
+      { "text": "Bondade.", "isCorrect": false, "explanation": "" }
+    ]
+  },
+  {
+    "question": "Como podemos ter paz, que é parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Confiando em Deus, mesmo quando estamos preocupados.", "isCorrect": true, "explanation": "" },
+      { "text": "Gritando muito quando estamos bravos.", "isCorrect": false, "explanation": "A paz nos ajuda a ficar calmos, não a gritar." },
+      { "text": "Dormindo o dia todo.", "isCorrect": false, "explanation": "Descansar é bom, mas a paz do Espírito é mais profunda." },
+      { "text": "Guardando raiva no coração.", "isCorrect": false, "explanation": "A paz vem quando deixamos a raiva de lado." }
+    ]
+  },
+  {
+    "question": "Quando mostramos amor, que é parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Quando ajudamos e cuidamos dos outros.", "isCorrect": true, "explanation": "" },
+      { "text": "Quando ficamos bravos com alguém.", "isCorrect": false, "explanation": "Ficar bravo não é mostrar amor." },
+      { "text": "Quando só pensamos em nós mesmos.", "isCorrect": false, "explanation": "Pensar nos outros é uma forma de mostrar amor." },
+      { "text": "Quando fazemos birra.", "isCorrect": false, "explanation": "Amor é ter paciência e cuidado, não fazer birra." }
+    ]
+  },
+  {
+    "question": "O que é bondade, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Fazer coisas boas para os outros.", "isCorrect": true, "explanation": "" },
+      { "text": "Ser bom só quando alguém está olhando.", "isCorrect": false, "explanation": "Devemos ser bons sempre, não só quando nos veem." },
+      { "text": "Fazer coisas boas só para ganhar presentes.", "isCorrect": false, "explanation": "Bondade verdadeira é ajudar sem esperar nada em troca." },
+      { "text": "Ser amigo apenas de quem nos dá presentes.", "isCorrect": false, "explanation": "Devemos ser amigos de todos, não só de quem nos dá algo." }
+    ]
+  },
+  {
+    "question": "O que é paciência, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Esperar com calma, mesmo quando é difícil.", "isCorrect": true, "explanation": "" },
+      { "text": "Gritar quando temos que esperar.", "isCorrect": false, "explanation": "Gritar não é ter paciência." },
+      { "text": "Ficar irritado quando as coisas demoram.", "isCorrect": false, "explanation": "Paciência é esperar com calma, sem irritação." },
+      { "text": "Não esperar por nada.", "isCorrect": false, "explanation": "Ter paciência é saber esperar pelo momento certo." }
+    ]
+  },
+  {
+    "question": "Como podemos mostrar fidelidade, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Cumprindo nossas promessas e sendo honestos.", "isCorrect": true, "explanation": "" },
+      { "text": "Dizendo mentiras de vez em quando.", "isCorrect": false, "explanation": "Fidelidade é ser sempre verdadeiro." },
+      { "text": "Mudando de opinião toda hora.", "isCorrect": false, "explanation": "Fidelidade é manter nossas palavras e compromissos." },
+      { "text": "Não ajudando os amigos quando eles precisam.", "isCorrect": false, "explanation": "Fidelidade é ser um bom amigo em todos os momentos." }
+    ]
+  },
+  {
+    "question": "O que é domínio próprio, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Conseguir controlar nossas ações e palavras.", "isCorrect": true, "explanation": "" },
+      { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Domínio próprio é saber quando dizer não para o que não é bom." },
+      { "text": "Responder mal aos pais quando estamos bravos.", "isCorrect": false, "explanation": "Domínio próprio é se controlar, mesmo quando estamos bravos." },
+      { "text": "Não pensar antes de agir.", "isCorrect": false, "explanation": "Domínio próprio é pensar antes de fazer algo." }
+    ]
+  },
+  {
+    "question": "Quem era Paulo?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Um missionário que contava às pessoas sobre Jesus.", "isCorrect": true, "explanation": "" },
+      { "text": "Um homem que nunca acreditou em Jesus.", "isCorrect": false, "explanation": "Paulo acreditou em Jesus e viajou para contar sobre Ele." },
+      { "text": "Um rei muito poderoso.", "isCorrect": false, "explanation": "Paulo era missionário, não um rei." },
+      { "text": "Um pescador que nunca saiu de casa.", "isCorrect": false, "explanation": "Paulo viajou para muitos lugares, não ficou em casa." }
+    ]
+  },
+  {
+    "question": "Por que Paulo escreveu uma carta para os gálatas?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Porque eles estavam confusos e precisavam de ajuda.", "isCorrect": true, "explanation": "" },
+      { "text": "Porque ele queria pedir dinheiro.", "isCorrect": false, "explanation": "Paulo não pediu dinheiro aos gálatas." },
+      { "text": "Porque eles não acreditavam em Jesus.", "isCorrect": false, "explanation": "Os gálatas acreditavam em Jesus, mas estavam confusos sobre a lei." },
+      { "text": "Porque eles queriam mudar de cidade.", "isCorrect": false, "explanation": "Paulo escreveu sobre fé, não sobre mudar de cidade." }
+    ]
+  },
+  {
+    "question": "O que Paulo queria que os gálatas lembrassem?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Que Jesus já tinha os libertado das regras antigas.", "isCorrect": true, "explanation": "" },
+      { "text": "Que eles precisavam seguir todas as regras da lei.", "isCorrect": false, "explanation": "Paulo falou que a fé em Jesus era o mais importante." },
+      { "text": "Que eles deveriam trabalhar mais.", "isCorrect": false, "explanation": "Paulo não falou sobre trabalho na carta." },
+      { "text": "Que eles deveriam comer só certos alimentos.", "isCorrect": false, "explanation": "A carta não era sobre comida, mas sobre fé." }
+    ]
+  },
+  {
+    "question": "O que significa “liberdade em Cristo”?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Ser livre para viver como Deus quer.", "isCorrect": true, "explanation": "" },
+      { "text": "Fazer tudo o que quisermos, sem pensar.", "isCorrect": false, "explanation": "Liberdade em Cristo não é fazer qualquer coisa, mas viver para agradar a Deus." },
+      { "text": "Nunca ir à igreja.", "isCorrect": false, "explanation": "Liberdade em Cristo é viver com alegria e fé, não deixar de ir à igreja." },
+      { "text": "Nunca ajudar os outros.", "isCorrect": false, "explanation": "A liberdade em Cristo nos leva a ajudar os outros com amor." }
+    ]
+  },
+  {
+    "question": "O que os gálatas estavam fazendo de errado?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Pensando que precisavam seguir todas as regras antigas para agradar a Deus.", "isCorrect": true, "explanation": "" },
+      { "text": "Esquecendo de orar.", "isCorrect": false, "explanation": "O problema era que eles pensavam que as regras antigas eram necessárias para a salvação." },
+      { "text": "Ajudando os pobres.", "isCorrect": false, "explanation": "Ajudar os pobres é bom, mas o problema era sobre as regras antigas." },
+      { "text": "Fazendo muitas festas.", "isCorrect": false, "explanation": "O problema era sobre seguir regras, não sobre festas." }
+    ]
+  },
+  {
+    "question": "Qual é o resultado de ter o Espírito Santo?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Ter qualidades boas como amor, alegria e paz.", "isCorrect": true, "explanation": "" },
+      { "text": "Ganhar muito dinheiro.", "isCorrect": false, "explanation": "O Espírito Santo nos dá qualidades boas, não dinheiro." },
+      { "text": "Nunca mais se sentir triste.", "isCorrect": false, "explanation": "O Espírito Santo nos ajuda, mas todos se sentem tristes às vezes." },
+      { "text": "Nunca mais ter problemas.", "isCorrect": false, "explanation": "O Espírito Santo nos ajuda a enfrentar os problemas, mas não os tira." }
+    ]
+  },
+  {
+    "question": "O que significa “andar pelo Espírito”?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Viver de acordo com a vontade de Deus.", "isCorrect": true, "explanation": "" },
+      { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Andar pelo Espírito é viver para agradar a Deus, não a nós mesmos." },
+      { "text": "Nunca mais brincar.", "isCorrect": false, "explanation": "Podemos brincar, mas andar pelo Espírito é fazer o que agrada a Deus." },
+      { "text": "Não fazer nada de divertido.", "isCorrect": false, "explanation": "Andar pelo Espírito não significa deixar de se divertir, mas viver de forma correta." }
+    ]
+  },
+  {
+    "question": "Como podemos mostrar amor, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Ajudando os outros e sendo gentis.", "isCorrect": true, "explanation": "" },
+      { "text": "Gritando quando estamos bravos.", "isCorrect": false, "explanation": "Amor é ser paciente e ajudar, não gritar." },
+      { "text": "Fazendo o que queremos sem pensar nos outros.", "isCorrect": false, "explanation": "Amar é pensar nos outros, não apenas em nós mesmos." },
+      { "text": "Não pedindo desculpas quando erramos.", "isCorrect": false, "explanation": "Pedir desculpas é uma forma de mostrar amor e humildade." }
+    ]
+  },
+  {
+    "question": "O que Paulo quis dizer com “contra essas coisas não há lei”?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Que não há nada que possa impedir a gente de amar e fazer o bem.", "isCorrect": true, "explanation": "" },
+      { "text": "Que devemos parar de amar os outros.", "isCorrect": false, "explanation": "Paulo fala que devemos amar, e que isso não pode ser proibido." },
+      { "text": "Que não precisamos mais obedecer a Deus.", "isCorrect": false, "explanation": "Paulo fala que o amor e as boas atitudes são sempre bem-vindos." },
+      { "text": "Que não podemos mais ser bons.", "isCorrect": false, "explanation": "Não há lei que proíba ser bom e mostrar amor." }
+    ]
+  },
+  {
+    "question": "Quem escreveu a carta aos Gálatas?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Paulo.", "isCorrect": true, "explanation": "" },
+      { "text": "Moisés.", "isCorrect": false, "explanation": "Moisés escreveu os primeiros livros da Bíblia, não a carta aos Gálatas." },
+      { "text": "Davi.", "isCorrect": false, "explanation": "Davi escreveu muitos salmos, mas não cartas." },
+      { "text": "Abraão.", "isCorrect": false, "explanation": "Abraão viveu antes de Paulo e não escreveu cartas." }
+    ]
+  },
+  {
+    "question": "O que Paulo queria lembrar aos gálatas?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Que Jesus já os libertou das antigas regras da lei.", "isCorrect": true, "explanation": "" },
+      { "text": "Que eles deveriam seguir todas as regras antigas.", "isCorrect": false, "explanation": "Paulo ensinou que a fé em Jesus era o mais importante." },
+      { "text": "Que precisavam orar mais.", "isCorrect": false, "explanation": "Orar é importante, mas Paulo estava falando sobre a fé em Jesus." },
+      { "text": "Que deveriam trabalhar mais.", "isCorrect": false, "explanation": "O tema da carta é sobre a liberdade em Cristo, não sobre trabalho." }
+    ]
+  },
+  {
+    "question": "O que é o fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Qualidades boas que o Espírito Santo nos dá.", "isCorrect": true, "explanation": "" },
+      { "text": "Uma fruta que podemos comer.", "isCorrect": false, "explanation": "O fruto do Espírito não é uma comida, mas qualidades boas." },
+      { "text": "Um presente de Natal.", "isCorrect": false, "explanation": "O fruto do Espírito não é um presente material, mas qualidades." },
+      { "text": "Um tipo de árvore.", "isCorrect": false, "explanation": "O fruto do Espírito não é uma árvore, mas qualidades que Deus nos dá." }
+    ]
+  },
+  {
+    "question": "O que significa ter paciência, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Esperar com calma, mesmo quando é difícil.", "isCorrect": true, "explanation": "" },
+      { "text": "Gritar quando estamos irritados.", "isCorrect": false, "explanation": "Paciência é manter a calma, não gritar." },
+      { "text": "Ficar bravo quando algo demora.", "isCorrect": false, "explanation": "Paciência é esperar com calma, sem ficar bravo." },
+      { "text": "Não esperar por nada.", "isCorrect": false, "explanation": "Paciência é justamente saber esperar o momento certo." }
+    ]
+  },
+  {
+    "question": "Por que Paulo escreveu para os gálatas?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Para explicar que somos salvos pela fé em Jesus.", "isCorrect": true, "explanation": "" },
+      { "text": "Para falar que deviam seguir todas as leis antigas.", "isCorrect": false, "explanation": "Paulo explicou que a salvação não depende das leis, mas da fé." },
+      { "text": "Para pedir que eles fizessem uma festa.", "isCorrect": false, "explanation": "A carta era sobre fé e liberdade, não sobre festas." },
+      { "text": "Para dizer que eles deviam comer apenas certos alimentos.", "isCorrect": false, "explanation": "Paulo não falou sobre alimentos, mas sobre fé e liberdade." }
+    ]
+  },
+  {
+    "question": "O que significa amar os outros, como Paulo ensina?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Cuidar e ajudar as pessoas com carinho.", "isCorrect": true, "explanation": "" },
+      { "text": "Brigar quando alguém nos irrita.", "isCorrect": false, "explanation": "Amar é ser paciente e bondoso, não brigar." },
+      { "text": "Fazer só o que queremos.", "isCorrect": false, "explanation": "Amar é pensar nos outros, não apenas em nós mesmos." },
+      { "text": "Ignorar as pessoas.", "isCorrect": false, "explanation": "Amar é se importar e ajudar, não ignorar." }
+    ]
+  },
+  {
+    "question": "O que Paulo quis dizer com “liberdade em Cristo”?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Que somos livres para viver de um jeito que agrada a Deus.", "isCorrect": true, "explanation": "" },
+      { "text": "Que podemos fazer qualquer coisa que quisermos.", "isCorrect": false, "explanation": "A liberdade em Cristo é viver de forma correta e que agrada a Deus." },
+      { "text": "Que não precisamos mais orar.", "isCorrect": false, "explanation": "Orar é importante para manter nossa comunhão com Deus." },
+      { "text": "Que não precisamos mais ir à igreja.", "isCorrect": false, "explanation": "Ir à igreja é importante para aprender e se reunir com outros cristãos." }
+    ]
+  },
+  {
+    "question": "O que significa ter domínio próprio?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Conseguir controlar nossas ações e palavras.", "isCorrect": true, "explanation": "" },
+      { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Domínio próprio é saber quando dizer não para o que não é bom." },
+      { "text": "Responder mal aos pais quando estamos bravos.", "isCorrect": false, "explanation": "Domínio próprio é se controlar, mesmo quando estamos bravos." },
+      { "text": "Não pensar antes de agir.", "isCorrect": false, "explanation": "Domínio próprio é pensar antes de fazer algo." }
+    ]
+  },
+  {
+    "question": "Como podemos mostrar alegria, parte do fruto do Espírito?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Agradecendo a Deus, mesmo quando as coisas estão difíceis.", "isCorrect": true, "explanation": "" },
+      { "text": "Ficando bravo quando não ganhamos o que queremos.", "isCorrect": false, "explanation": "Alegria é ser grato, mesmo quando não conseguimos o que queremos." },
+      { "text": "Ficar feliz só quando ganhamos presentes.", "isCorrect": false, "explanation": "Alegria do Espírito é ser grato e feliz em qualquer situação, não só com presentes." },
+      { "text": "Rindo de todas as piadas.", "isCorrect": false, "explanation": "Alegria do Espírito é mais do que apenas rir, é ser feliz por saber que Deus nos ama." }
+    ]
+  },
+  {
+    "question": "O que Paulo quis dizer com “andem pelo Espírito”?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 5,
+    "answers": [
+      { "text": "Vivam de acordo com o que Deus deseja.", "isCorrect": true, "explanation": "" },
+      { "text": "Façam tudo o que vocês quiserem.", "isCorrect": false, "explanation": "Andar pelo Espírito é seguir a vontade de Deus, não a nossa." },
+      { "text": "Não sigam mais a Deus.", "isCorrect": false, "explanation": "Paulo quer que vivamos com Deus, não longe dEle." },
+      { "text": "Sigam apenas as suas vontades.", "isCorrect": false, "explanation": "Paulo fala sobre viver pelo que Deus quer, não pelo que nós queremos." }
+    ]
+  }
+]
