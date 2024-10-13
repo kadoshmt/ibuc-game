@@ -15,6 +15,7 @@ async function main() {
   const lessonsModules = await loadJSON(path.join(__dirname, 'seeds', 'lessons_modules.json'));
   const questionsModule1Lesson1 = await loadJSON(path.join(__dirname, 'seeds', 'questions_module_1_lesson_1.json'));
   const questionsModule9Lesson5 = await loadJSON(path.join(__dirname, 'seeds', 'questions_module_9_lesson_5.json'));
+  const questionsModule9Lesson8 = await loadJSON(path.join(__dirname, 'seeds', 'questions_module_9_lesson_8.json'));
 
   // // Seed Levels
   // for (const level of levels) {
@@ -47,8 +48,8 @@ async function main() {
   //   }
   // }
 
-  // Seed Questions and Answers for Module 9 Lesson 5
-  for (const questionData of questionsModule9Lesson5) {
+  // Seed Questions and Answers for Module 9 Lesson 8
+  for (const questionData of questionsModule9Lesson8) {
     const { answers, ...question } = questionData;
     const createdQuestion = await prisma.question.create({
       data: question

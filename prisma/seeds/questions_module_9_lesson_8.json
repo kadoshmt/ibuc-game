@@ -1,0 +1,380 @@
+[
+  {
+    "question": "Como Paulo instruiu os colossenses a viverem em Colossenses 2:6-7?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Ignorando os ensinamentos de Cristo", "isCorrect": false, "explanation": "Paulo ensina a andar em Cristo, não ignorá-Lo." },
+      { "text": "Andando em Cristo, arraigados e edificados nEle", "isCorrect": true, "explanation": "" },
+      { "text": "Seguindo as tradições humanas", "isCorrect": false, "explanation": "Paulo adverte contra seguir tradições humanas, não contra Cristo." },
+      { "text": "Confiando em filosofias mundanas", "isCorrect": false, "explanation": "Paulo adverte contra as filosofias mundanas." }
+    ]
+  },
+  {
+    "question": "O que Paulo diz sobre a importância de Cristo em Colossenses 1:18?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Que Cristo é apenas um líder espiritual", "isCorrect": false, "explanation": "Paulo afirma que Cristo é a cabeça da igreja e supremo em tudo." },
+      { "text": "Que Cristo é a cabeça da igreja, é o mais importante e está no comando de tudo", "isCorrect": true, "explanation": "" },
+      { "text": "Que Cristo é igual a outros líderes religiosos", "isCorrect": false, "explanation": "Paulo afirma a supremacia exclusiva de Cristo." },
+      { "text": "Que Cristo é uma figura simbólica", "isCorrect": false, "explanation": "Paulo fala de Cristo como real e supremo." }
+    ]
+  },
+  {
+    "question": "Onde Paulo estava quando escreveu a Carta aos Colossenses?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Em Jerusalém", "isCorrect": false, "explanation": "Paulo estava preso em Roma." },
+      { "text": "Em Roma, na prisão", "isCorrect": true, "explanation": "" },
+      { "text": "Em Corinto", "isCorrect": false, "explanation": "Paulo estava em Roma, não em Corinto." },
+      { "text": "Em Colossos", "isCorrect": false, "explanation": "Paulo escreveu para Colossos, mas não estava lá." }
+    ]
+  },
+  {
+    "question": "Como Paulo descreve Jesus em Colossenses 1:15-16?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Como um grande profeta", "isCorrect": false, "explanation": "Paulo descreve Jesus como a imagem do Deus invisível e criador de todas as coisas." },
+      { "text": "Como a imagem do Deus invisível, criador de todas as coisas", "isCorrect": true, "explanation": "" },
+      { "text": "Como um líder moral", "isCorrect": false, "explanation": "Paulo vai além, descrevendo Jesus como criador e Deus." },
+      { "text": "Como um revolucionário", "isCorrect": false, "explanation": "Paulo foca na divindade e supremacia de Cristo." }
+    ]
+  },
+  {
+    "question": "Como Paulo instruiu os colossenses a lidarem com a velha e a nova natureza em Colossenses 3:9-10?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Mantendo as práticas da velha natureza", "isCorrect": false, "explanation": "Paulo instrui a despir-se do velho homem e revestir-se do novo." },
+      { "text": "Despindo-se do velho homem e revestindo-se do novo", "isCorrect": true, "explanation": "" },
+      { "text": "Ignorando as mudanças necessárias", "isCorrect": false, "explanation": "Paulo enfatiza a transformação em Cristo." },
+      { "text": "Seguindo apenas regras externas", "isCorrect": false, "explanation": "Paulo fala de uma transformação interna, não apenas externa." }
+    ]
+  },
+  {
+    "question": "O que Paulo ensina sobre o perdão em Colossenses 3:13?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Que o perdão não é necessário", "isCorrect": false, "explanation": "Paulo instrui a perdoar como Cristo nos perdoou." },
+      { "text": "Que devemos perdoar uns aos outros como Cristo nos perdoou", "isCorrect": true, "explanation": "" },
+      { "text": "Que o perdão depende da gravidade da ofensa", "isCorrect": false, "explanation": "Paulo ensina o perdão incondicional." },
+      { "text": "Que o perdão é apenas para os justos", "isCorrect": false, "explanation": "Paulo ensina a perdoar a todos, sem exceção." }
+    ]
+  },
+  {
+    "question": "Como Paulo descreve a paz de Cristo em Colossenses 3:15?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Como uma paz que vem do mundo", "isCorrect": false, "explanation": "A paz de Cristo é diferente da paz do mundo." },
+      { "text": "Como uma paz que deve dominar nossos corações", "isCorrect": true, "explanation": "" },
+      { "text": "Como uma paz que depende das circunstâncias", "isCorrect": false, "explanation": "A paz de Cristo transcende as circunstâncias." },
+      { "text": "Como uma paz temporária", "isCorrect": false, "explanation": "A paz de Cristo é duradoura e eterna." }
+    ]
+  },
+  {
+    "question": "O que Paulo diz sobre o evangelho de Cristo em Colossenses 1:23?",
+    "type": "multipla_escolha",
+    "tips": "",
+    "levelId": 4,
+    "moduleId": 9,
+    "lessonId": 104,
+    "answers": [
+      { "text": "Que só os apóstolos devem pregar", "isCorrect": false, "explanation": "Paulo encoraja todos a permanecerem firmes na fé e a pregar o evangelho." },
+      { "text": "Que devemos permanecer firmes na fé e não nos afastar da esperança do evangelho", "isCorrect": true, "explanation": "" },
+      { "text": "Que a pregação é secundária", "isCorrect": false, "explanation": "Paulo enfatiza a centralidade da pregação do evangelho." },
+      { "text": "Que a pregação não é necessária", "isCorrect": false, "explanation": "Paulo exorta à pregação constante do evangelho." }
+    ]
+  },
+    {
+      "question": "O que Paulo ensina sobre a oração em Colossenses 4:2?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que a oração deve ser feita apenas em momentos de crise", "isCorrect": false, "explanation": "Paulo ensina a perseverar na oração com vigilância e gratidão." },
+        { "text": "Que devemos perseverar em oração, sendo vigilantes e agradecidos", "isCorrect": true, "explanation": "" },
+        { "text": "Que a oração é opcional para os crentes", "isCorrect": false, "explanation": "Paulo enfatiza a importância constante da oração." },
+        { "text": "Que a oração não é tão importante", "isCorrect": false, "explanation": "Paulo destaca a oração como central na vida cristã." }
+      ]
+    },
+    {
+      "question": "Quem Paulo menciona como um exemplo de servo fiel em Colossenses 4:12?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Timóteo", "isCorrect": false, "explanation": "Timóteo é mencionado em outras cartas, mas aqui Paulo fala de Epafras." },
+        { "text": "Epafras", "isCorrect": true, "explanation": "" },
+        { "text": "Tito", "isCorrect": false, "explanation": "Tito é mencionado em outras cartas, mas aqui Paulo fala de Epafras." },
+        { "text": "Barnabé", "isCorrect": false, "explanation": "Barnabé não é mencionado em Colossenses." }
+      ]
+    },
+    {
+      "question": "Como Paulo exorta os colossenses a falar em Colossenses 4:6?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Com palavras duras e críticas", "isCorrect": false, "explanation": "Paulo instrui a falar com graça e palavras temperadas com sal." },
+        { "text": "Que a palavra seja sempre agradável, temperada com sal", "isCorrect": true, "explanation": "" },
+        { "text": "Evitando conversar", "isCorrect": false, "explanation": "Paulo instrui a falar de maneira graciosa, não a evitar falar." },
+        { "text": "Com palavras simples, sem importância", "isCorrect": false, "explanation": "Paulo ensina a importância de falar com graça e sabedoria." }
+      ]
+    },
+    {
+      "question": "O que Paulo diz que Cristo fez em Colossenses 2:15?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que Ele ignorou os poderes malignos", "isCorrect": false, "explanation": "Paulo afirma que Cristo despojou os poderes e autoridades, triunfando sobre eles." },
+        { "text": "Que Ele venceu todos os poderes do mal, derrotando-os na cruz", "isCorrect": true, "explanation": "" },
+        { "text": "Que Ele foi derrotado pelas autoridades", "isCorrect": false, "explanation": "Paulo ensina que Cristo foi vitorioso sobre todos os poderes." },
+        { "text": "Que Ele se submeteu aos poderes terrenos", "isCorrect": false, "explanation": "Cristo venceu e não se submeteu aos poderes terrenos." }
+      ]
+    },
+    {
+      "question": "Como Paulo instruiu sobre o uso do tempo em Colossenses 4:5?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Desperdiçando-o com coisas mundanas", "isCorrect": false, "explanation": "Paulo ensina a aproveitar ao máximo cada oportunidade." },
+        { "text": "Aproveitando ao máximo cada oportunidade", "isCorrect": true, "explanation": "" },
+        { "text": "Deixando o tempo passar sem preocupação", "isCorrect": false, "explanation": "Paulo instrui a usar o tempo sabiamente." },
+        { "text": "Concentrando-se apenas no futuro", "isCorrect": false, "explanation": "Paulo fala sobre viver com sabedoria no presente." }
+      ]
+    },
+    {
+      "question": "O que Paulo afirma sobre a reconciliação em Colossenses 1:20?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que a reconciliação é possível apenas entre os homens", "isCorrect": false, "explanation": "Paulo afirma que Cristo reconciliou todas as coisas, tanto na terra como nos céus." },
+        { "text": "Que Cristo reconciliou todas as coisas, tanto na terra como nos céus", "isCorrect": true, "explanation": "" },
+        { "text": "Que a reconciliação é desnecessária", "isCorrect": false, "explanation": "Paulo ensina a importância da reconciliação em Cristo." },
+        { "text": "Que a reconciliação é impossível", "isCorrect": false, "explanation": "Paulo afirma a reconciliação completa em Cristo." }
+      ]
+    },
+    {
+      "question": "O que Paulo ensina sobre a sabedoria em Colossenses 1:9?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que a sabedoria não é importante para a vida cristã", "isCorrect": false, "explanation": "Paulo ora para que os colossenses sejam cheios do conhecimento da vontade de Deus em toda a sabedoria e entendimento espiritual." },
+        { "text": "Que devemos buscar a sabedoria de Deus e entendimento espiritual", "isCorrect": true, "explanation": "" },
+        { "text": "Que a sabedoria humana é suficiente", "isCorrect": false, "explanation": "Paulo ensina que a sabedoria espiritual é superior à humana." },
+        { "text": "Que a sabedoria deixa as pessoas loucas", "isCorrect": false, "explanation": "Paulo destaca a importância da sabedoria espiritual." }
+      ]
+    },
+    {
+      "question": "Como Paulo instrui os colossenses a vestirem-se espiritualmente em Colossenses 3:12?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Com roupas ricas e elegantes", "isCorrect": false, "explanation": "Paulo fala sobre vestir-se com compaixão, bondade, humildade, mansidão e paciência." },
+        { "text": "Com compaixão, bondade, humildade, mansidão e paciência", "isCorrect": true, "explanation": "" },
+        { "text": "Com vestes de ouro e prata", "isCorrect": false, "explanation": "Paulo instrui a se vestir espiritualmente, não fisicamente." },
+        { "text": "Com armaduras físicas", "isCorrect": false, "explanation": "Paulo usa a metáfora de vestes espirituais, não físicas." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: “E a paz de Deus, para a qual também fostes chamados em um corpo, domine em vossos (...).” Colossenses 3:15",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "corações, e sede agradecidos", "isCorrect": true, "explanation": "" },
+        { "text": "mentes e se sintam melhores do que os outros", "isCorrect": false, "explanation": "Mentes é importante, mas a palavra correta é corações." },
+        { "text": "vidas e deixem de fazer o bem", "isCorrect": false, "explanation": "Vidas é importante, mas a palavra correta é corações." },
+        { "text": "ações e pratiquem o que quiserem", "isCorrect": false, "explanation": "Ações são relevantes, mas a palavra correta é corações." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: 'E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor, e não aos (...).' Colossenses 3:23",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "homens", "isCorrect": true, "explanation": "" },
+        { "text": "reis", "isCorrect": false, "explanation": "Reis é simbólico, mas a palavra correta é homens." },
+        { "text": "poderosos", "isCorrect": false, "explanation": "Poderosos é relevante, mas a palavra exata é homens." },
+        { "text": "líderes", "isCorrect": false, "explanation": "Líderes são importantes, mas a palavra correta é homens." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: 'Porque nEle habita corporalmente toda a plenitude de (...).' Colossenses 2:9",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Deus", "isCorrect": true, "explanation": "" },
+        { "text": "poder", "isCorrect": false, "explanation": "Poder é central, mas a palavra correta é Deus." },
+        { "text": "graça", "isCorrect": false, "explanation": "Graça é relevante, mas a palavra exata é Deus." },
+        { "text": "sabedoria", "isCorrect": false, "explanation": "Sabedoria é importante, mas a palavra correta é Deus." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: 'Quando Cristo, que é a nossa vida, se manifestar, então também vós vos manifestareis com Ele em (...).' Colossenses 3:4",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "glória", "isCorrect": true, "explanation": "" },
+        { "text": "luz", "isCorrect": false, "explanation": "Luz é simbólica, mas a palavra correta é glória." },
+        { "text": "poder", "isCorrect": false, "explanation": "Poder é importante, mas a palavra exata é glória." },
+        { "text": "graça", "isCorrect": false, "explanation": "Graça é relevante, mas a palavra correta é glória." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: 'E sobre tudo isto, revesti-vos de (...), que é o vínculo da perfeição.' Colossenses 3:14",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "amor", "isCorrect": true, "explanation": "" },
+        { "text": "fé", "isCorrect": false, "explanation": "Fé é central, mas a palavra correta é amor." },
+        { "text": "esperança", "isCorrect": false, "explanation": "Esperança é relevante, mas a palavra exata é amor." },
+        { "text": "verdade", "isCorrect": false, "explanation": "Verdade é importante, mas a palavra correta é amor." }
+      ]
+    },
+    {
+      "question": "Qual era o pedido principal de Paulo a Filemom?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que castigasse Onésimo", "isCorrect": false, "explanation": "Paulo pede perdão, não castigo." },
+        { "text": "Que recebesse Onésimo como um irmão na fé", "isCorrect": true, "explanation": "" },
+        { "text": "Que vendesse Onésimo", "isCorrect": false, "explanation": "Paulo não faz esse pedido." },
+        { "text": "Que ignorasse Onésimo", "isCorrect": false, "explanation": "Paulo exorta ao perdão, não à indiferença." }
+      ]
+    },
+    {
+      "question": "Quem era Onésimo?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Um inimigo de Paulo", "isCorrect": false, "explanation": "Onésimo era um escravo, não um inimigo." },
+        { "text": "Um escravo de Filemom que fugiu e se tornou cristão", "isCorrect": true, "explanation": "" },
+        { "text": "Um sacerdote judeu", "isCorrect": false, "explanation": "Onésimo não era sacerdote." },
+        { "text": "Um soldado romano", "isCorrect": false, "explanation": "Onésimo era um escravo, não um soldado." }
+      ]
+    },
+    {
+      "question": "Como Paulo desejava que Filemom tratasse Onésimo após seu retorno?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Como um escravo", "isCorrect": false, "explanation": "Paulo pede que o trate como um irmão." },
+        { "text": "Como um irmão amado na fé", "isCorrect": true, "explanation": "" },
+        { "text": "Como um inimigo", "isCorrect": false, "explanation": "Paulo pede reconciliação, não inimizade." },
+        { "text": "Como um estranho", "isCorrect": false, "explanation": "Paulo deseja que Onésimo seja aceito como parte da família de fé." }
+      ]
+    },
+    {
+      "question": "Qual é a mensagem central da Carta de Paulo a Filemom?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "A importância da obediência à lei", "isCorrect": false, "explanation": "A carta foca no perdão e na reconciliação, não na lei." },
+        { "text": "A transformação pela fé em Cristo", "isCorrect": true, "explanation": "" },
+        { "text": "A necessidade de guerra contra os romanos", "isCorrect": false, "explanation": "Não há menção de guerra, mas de perdão." },
+        { "text": "A superioridade dos judeus", "isCorrect": false, "explanation": "Paulo fala de igualdade em Cristo." }
+      ]
+    },
+    {
+      "question": "O que Paulo oferece a Filemom em relação a qualquer dívida que Onésimo possa ter?",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "Que esqueça a dívida", "isCorrect": false, "explanation": "Paulo oferece pagar a dívida." },
+        { "text": "Que ele, Paulo, pagará a dívida", "isCorrect": true, "explanation": "" },
+        { "text": "Que aumente a dívida de Onésimo", "isCorrect": false, "explanation": "Paulo não sugere isso." },
+        { "text": "Que envie Onésimo para outra cidade", "isCorrect": false, "explanation": "Paulo quer que Filemom o receba de volta." }
+      ]
+    },
+    {
+      "question": "Complete o versículo: '...Receba Onésimo não mais como escravo, mas acima de escravo, como (...). Para mim ele é um irmão muito amado, e ainda mais para você, tanto como pessoa quanto como cristão' Filemom 16",
+      "type": "multipla_escolha",
+      "tips": "",
+      "levelId": 4,
+      "moduleId": 9,
+      "lessonId": 104,
+      "answers": [
+        { "text": "irmão amado", "isCorrect": true, "explanation": "" },
+        { "text": "servo necessário", "isCorrect": false, "explanation": "O termo é irmão amado." },
+        { "text": "amigo falso", "isCorrect": false, "explanation": "Paulo usa a expressão irmão amado." },
+        { "text": "trabalhador leal", "isCorrect": false, "explanation": "Paulo fala de um irmão na fé, não apenas de um trabalhador." }
+      ]
+    }  
+]

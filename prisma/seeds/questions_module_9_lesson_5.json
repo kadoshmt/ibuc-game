@@ -5,7 +5,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Ter muitas frutas em casa.", "isCorrect": false, "explanation": "Não, o fruto do Espírito é sobre qualidades boas que Deus nos dá." },
       { "text": "Ser cheio de qualidades boas como amor e alegria.", "isCorrect": true, "explanation": "" },
@@ -19,7 +19,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Amor.", "isCorrect": true, "explanation": "" },
       { "text": "Mentira.", "isCorrect": false, "explanation": "A mentira não faz parte do fruto do Espírito." },
@@ -33,7 +33,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Ficar feliz só quando ganha presentes.", "isCorrect": false, "explanation": "Alegria do Espírito é algo mais especial e constante." },
       { "text": "Ter dinheiro para comprar o que quiser.", "isCorrect": false, "explanation": "A alegria do Espírito não depende de ter coisas." },
@@ -47,7 +47,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Paciência.", "isCorrect": false, "explanation": "" },
       { "text": "Fidelidade.", "isCorrect": false, "explanation": "" },
@@ -61,7 +61,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Confiando em Deus, mesmo quando estamos preocupados.", "isCorrect": true, "explanation": "" },
       { "text": "Gritando muito quando estamos bravos.", "isCorrect": false, "explanation": "A paz nos ajuda a ficar calmos, não a gritar." },
@@ -75,7 +75,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Quando ajudamos e cuidamos dos outros.", "isCorrect": true, "explanation": "" },
       { "text": "Quando ficamos bravos com alguém.", "isCorrect": false, "explanation": "Ficar bravo não é mostrar amor." },
@@ -89,7 +89,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Fazer coisas boas para os outros.", "isCorrect": true, "explanation": "" },
       { "text": "Ser bom só quando alguém está olhando.", "isCorrect": false, "explanation": "Devemos ser bons sempre, não só quando nos veem." },
@@ -103,7 +103,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Esperar com calma, mesmo quando é difícil.", "isCorrect": true, "explanation": "" },
       { "text": "Gritar quando temos que esperar.", "isCorrect": false, "explanation": "Gritar não é ter paciência." },
@@ -117,7 +117,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Cumprindo nossas promessas e sendo honestos.", "isCorrect": true, "explanation": "" },
       { "text": "Dizendo mentiras de vez em quando.", "isCorrect": false, "explanation": "Fidelidade é ser sempre verdadeiro." },
@@ -131,7 +131,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Conseguir controlar nossas ações e palavras.", "isCorrect": true, "explanation": "" },
       { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Domínio próprio é saber quando dizer não para o que não é bom." },
@@ -145,7 +145,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Um missionário que contava às pessoas sobre Jesus.", "isCorrect": true, "explanation": "" },
       { "text": "Um homem que nunca acreditou em Jesus.", "isCorrect": false, "explanation": "Paulo acreditou em Jesus e viajou para contar sobre Ele." },
@@ -159,7 +159,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Porque eles estavam confusos e precisavam de ajuda.", "isCorrect": true, "explanation": "" },
       { "text": "Porque ele queria pedir dinheiro.", "isCorrect": false, "explanation": "Paulo não pediu dinheiro aos gálatas." },
@@ -173,7 +173,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Que Jesus já tinha os libertado das regras antigas.", "isCorrect": true, "explanation": "" },
       { "text": "Que eles precisavam seguir todas as regras da lei.", "isCorrect": false, "explanation": "Paulo falou que a fé em Jesus era o mais importante." },
@@ -187,7 +187,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Ser livre para viver como Deus quer.", "isCorrect": true, "explanation": "" },
       { "text": "Fazer tudo o que quisermos, sem pensar.", "isCorrect": false, "explanation": "Liberdade em Cristo não é fazer qualquer coisa, mas viver para agradar a Deus." },
@@ -201,7 +201,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Pensando que precisavam seguir todas as regras antigas para agradar a Deus.", "isCorrect": true, "explanation": "" },
       { "text": "Esquecendo de orar.", "isCorrect": false, "explanation": "O problema era que eles pensavam que as regras antigas eram necessárias para a salvação." },
@@ -215,7 +215,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Ter qualidades boas como amor, alegria e paz.", "isCorrect": true, "explanation": "" },
       { "text": "Ganhar muito dinheiro.", "isCorrect": false, "explanation": "O Espírito Santo nos dá qualidades boas, não dinheiro." },
@@ -229,7 +229,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Viver de acordo com a vontade de Deus.", "isCorrect": true, "explanation": "" },
       { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Andar pelo Espírito é viver para agradar a Deus, não a nós mesmos." },
@@ -243,7 +243,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Ajudando os outros e sendo gentis.", "isCorrect": true, "explanation": "" },
       { "text": "Gritando quando estamos bravos.", "isCorrect": false, "explanation": "Amor é ser paciente e ajudar, não gritar." },
@@ -257,7 +257,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Que não há nada que possa impedir a gente de amar e fazer o bem.", "isCorrect": true, "explanation": "" },
       { "text": "Que devemos parar de amar os outros.", "isCorrect": false, "explanation": "Paulo fala que devemos amar, e que isso não pode ser proibido." },
@@ -271,7 +271,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Paulo.", "isCorrect": true, "explanation": "" },
       { "text": "Moisés.", "isCorrect": false, "explanation": "Moisés escreveu os primeiros livros da Bíblia, não a carta aos Gálatas." },
@@ -285,7 +285,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Que Jesus já os libertou das antigas regras da lei.", "isCorrect": true, "explanation": "" },
       { "text": "Que eles deveriam seguir todas as regras antigas.", "isCorrect": false, "explanation": "Paulo ensinou que a fé em Jesus era o mais importante." },
@@ -299,7 +299,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Qualidades boas que o Espírito Santo nos dá.", "isCorrect": true, "explanation": "" },
       { "text": "Uma fruta que podemos comer.", "isCorrect": false, "explanation": "O fruto do Espírito não é uma comida, mas qualidades boas." },
@@ -313,7 +313,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Esperar com calma, mesmo quando é difícil.", "isCorrect": true, "explanation": "" },
       { "text": "Gritar quando estamos irritados.", "isCorrect": false, "explanation": "Paciência é manter a calma, não gritar." },
@@ -327,7 +327,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Para explicar que somos salvos pela fé em Jesus.", "isCorrect": true, "explanation": "" },
       { "text": "Para falar que deviam seguir todas as leis antigas.", "isCorrect": false, "explanation": "Paulo explicou que a salvação não depende das leis, mas da fé." },
@@ -341,7 +341,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Cuidar e ajudar as pessoas com carinho.", "isCorrect": true, "explanation": "" },
       { "text": "Brigar quando alguém nos irrita.", "isCorrect": false, "explanation": "Amar é ser paciente e bondoso, não brigar." },
@@ -355,7 +355,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Que somos livres para viver de um jeito que agrada a Deus.", "isCorrect": true, "explanation": "" },
       { "text": "Que podemos fazer qualquer coisa que quisermos.", "isCorrect": false, "explanation": "A liberdade em Cristo é viver de forma correta e que agrada a Deus." },
@@ -369,7 +369,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Conseguir controlar nossas ações e palavras.", "isCorrect": true, "explanation": "" },
       { "text": "Fazer tudo o que temos vontade.", "isCorrect": false, "explanation": "Domínio próprio é saber quando dizer não para o que não é bom." },
@@ -383,7 +383,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Agradecendo a Deus, mesmo quando as coisas estão difíceis.", "isCorrect": true, "explanation": "" },
       { "text": "Ficando bravo quando não ganhamos o que queremos.", "isCorrect": false, "explanation": "Alegria é ser grato, mesmo quando não conseguimos o que queremos." },
@@ -397,7 +397,7 @@
     "tips": "",
     "levelId": 4,
     "moduleId": 9,
-    "lessonId": 5,
+    "lessonId": 101,
     "answers": [
       { "text": "Vivam de acordo com o que Deus deseja.", "isCorrect": true, "explanation": "" },
       { "text": "Façam tudo o que vocês quiserem.", "isCorrect": false, "explanation": "Andar pelo Espírito é seguir a vontade de Deus, não a nossa." },

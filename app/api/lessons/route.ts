@@ -15,6 +15,7 @@ export async function GET(req: NextRequest) {
           name: true,
           moduleId: true,
         },
+        orderBy: {id : 'asc'}
       });
       return NextResponse.json(lessons);
     } else {
